@@ -228,20 +228,24 @@ object empty
 }
 
 String formatLinkedList(LinkedList<Object> list) {
-    //we use a switch statement to handle
-    //the cases of the enumerated type
+    //We use a switch statement to handle
+    //the cases of the enumerated type. The
+    //compiler validates that the switch
+    //exhausts all cases
     switch (list)
     case (empty) {
         return "";
     }
     case (is Cons<Object>) {
-        switch (list.rest)
+        value rest = list.rest;
+        value firstString = list.first.string;
+        switch (rest)
         case (empty) {
-            return list.first.string;
+            return firstString;
         }
         else {
-            return list.first.string + ", " + 
-                    formatLinkedList(list.rest);
+            return firstString + ", " + 
+                    formatLinkedList(rest);
         }
     }
 }
