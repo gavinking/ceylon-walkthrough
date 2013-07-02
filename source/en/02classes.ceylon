@@ -194,3 +194,72 @@ void testSecondTime() {
     assert (stime1.string=="13:30:00");
     assert (stime2.string=="13:30:25");
 }
+
+/*
+ 
+ An abstract class is a class which can't be
+ instantiated. It may declare formal members,
+ which must be implemented by concrete 
+ subclasses of the abstract class.
+ 
+ An enumerated type is an abstract class or
+ interface which enumerates (restricts) its 
+ subtypes.
+ 
+*/
+
+abstract class LinkedList<out T>() 
+        of Cons<T> | empty {
+    shared formal Integer length;
+}
+
+//this case of the enumerated type is a class
+class Cons<out T>(shared T first,
+                  shared LinkedList<T> rest) 
+        extends LinkedList<T>() {
+    length=>rest.length+1;
+}
+
+//this case of the enumerated type is a 
+//singleton object
+object empty 
+        extends LinkedList<Nothing>() {
+    length=>0;
+}
+
+String formatLinkedList(LinkedList<Object> list) {
+    //we use a switch statement to handle
+    //the cases of the enumerated type
+    switch (list)
+    case (empty) {
+        return "";
+    }
+    case (is Cons<Object>) {
+        switch (list.rest)
+        case (empty) {
+            return list.first.string;
+        }
+        else {
+            return list.first.string + ", " + 
+                    formatLinkedList(list.rest);
+        }
+    }
+}
+
+void testLinkedList() {
+    value list = Cons("Smalltalk", Cons("Java", Cons("Ceylon", empty)));
+    assert (list.length==3);
+    print(formatLinkedList(list));
+}
+
+/*
+
+ EXERCISE
+ 
+ Write a Java-style enum in Ceylon. The classic
+ example is the Suit enum, with cases hearts,
+ diamonds, clubs, spades.
+
+*/
+
+//TODO: write a Suit class here
