@@ -59,6 +59,34 @@ void demoFunctionRefs() {
 }
 
 /*
+ 
+ Function types exhibit the correct variance
+ with respect to their return and parameter
+ types. This is just a consequence of the
+ variance of the type parameters of the types
+ Callable and Tuple.
+ 
+ That is, a function with more general 
+ parameter types and a more specific return 
+ type is assignable to a function type. Sounds
+ complicated, but it all works out pretty much 
+ intuitively.
+ 
+*/
+
+//a function that accepts Anything is also a
+//function that accepts a String
+Anything(String) printStringFun = printFun;
+
+//a function that returns a Range is also a
+//function that returns an Iterable
+{Integer+}(Integer, Integer) iterableFun = rangeFun;
+
+//a function with a variadic parameter is also
+//a function with two parameters!
+Integer(Integer, Integer) sumBothFun = sumFun;
+
+/*
 
  Usually we pass function refs to other 
  functions.
