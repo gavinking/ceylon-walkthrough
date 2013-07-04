@@ -106,6 +106,10 @@ void thenAndElse() {
  
  Intersection types often arise as a result of
  type narrowing.
+ 
+ Note: the syntax {T*} means an iterable 
+ sequence of values of type T. It's syntactic
+ sugar for the interface Iterable.
 
 */
 
