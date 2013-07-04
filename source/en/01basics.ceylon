@@ -73,6 +73,7 @@ void calculateSums() {
     
     //the sum of all the numbers from 0 to 10 
     //inclusive, using the range operator ..
+    //and the spread operator *
     print(sum(*(0..10)));
     
     //just to whet your appetite, the sum of 
