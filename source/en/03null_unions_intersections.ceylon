@@ -156,7 +156,7 @@ void demoTypeInference() {
 
 /*
 
- Union and intersection types also help is
+ Union and intersection types also help
  correctly type the union and intersection
  operations on Sets.
  
@@ -196,6 +196,31 @@ void demoSets() {
  disjoint types (have no instances in common).
 
 */
+
+/*
+
+ The useful coalesce() function also 
+ demonstrates a nice application of 
+ intersection.
+ 
+ Check out the definition of coalesce() to
+ see how this works.
+
+*/
+
+void demoCoalesce() {
+    
+    //{String?*} is the type of an iterable of
+    //strings and nulls
+    {String?*} stringsAndNulls = {"hello", null, "world"};
+    
+    //{String*} is the type of an iterable of
+    //just strings (without nulls)
+    {String*} strings = coalesce(stringsAndNulls);
+    
+    assert (strings.sequence=={"hello", "world"});
+    
+}
 
 /*
 
