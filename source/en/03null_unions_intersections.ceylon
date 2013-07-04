@@ -234,7 +234,7 @@ void demoCoalesce() {
  
  The problem is that when we have "zero or 
  more things", max() can return null. But when 
- we have "one or more" things, it can. And 
+ we have "one or more" things, it can't. And 
  when we have exactly zero things, max() 
  always returns null. How can we capture this
  within the type system?
