@@ -153,3 +153,82 @@ void demoTypeInference() {
     Object[] objects = joined;
     print(objects);
 }
+
+/*
+
+ Union and intersection types also help is
+ correctly type the union and intersection
+ operations on Sets.
+ 
+ Set union and intersection are defined in
+ terms of the methods intersection() and
+ union() of the interface Set. The | and & 
+ operators are syntactic sugar for these
+ methods.
+ 
+ Check out the definition of these methods in
+ Set to see how they are in turn defined in
+ terms of union/intersection types.
+
+*/
+
+void demoSets() {
+    Set<Character> chars = LazySet("hello");
+    Set<Integer> ints = LazySet(0..10);
+    //hover over intsAndChars to see its type!
+    value intsAndChars = chars|ints;
+    print(intsAndChars);
+    //hover over empty to see its type!
+    value empty = chars&ints;
+    print(empty);
+}
+
+/*
+
+ EXERCISE
+ 
+ The special type Nothing is the "bottom" type,
+ a type with no instances.
+ 
+ Explain why the type of the intersection
+ chars&ints above is Set<Nothing>, given that
+ the type Character and the type Integer are
+ disjoint types (have no instances in common).
+
+*/
+
+/*
+
+ There's a special trick we can do with union
+ types that help us give functions like max()
+ and min() the correct type.
+ 
+ The problem is that when we have "zero or 
+ more things", max() can return null. But when 
+ we have "one or more" things, it can. And 
+ when we have exactly zero things, max() 
+ always returns null. How can we capture this
+ within the type system?
+ 
+*/
+
+void demoMax() {
+    
+    Null maxOfZero = max({});
+    
+    {Integer+} oneOrMore = {1, 2};
+    Integer maxOfOneOrMore = max(oneOrMore);
+    
+    {Integer*} zeroOrMore = {1, 2};
+    Integer? maxOfZeroOrMore = max(zeroOrMore);
+    
+}
+
+/*
+
+ EXERCISE
+
+ Check out the definitions of max() and
+ Iterable and figure out how this works!
+
+*/
