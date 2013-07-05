@@ -153,8 +153,8 @@ void testSequenceIndexing() {
 
 void demoNonempty() {
     if (nonempty args = process.arguments) {
-        //hover over args and first to see 
-        //their types!
+        //Pon el mouse sobre args y first
+        //para ver sus tipos!
         value first = args.first;
         print(first);
     }
