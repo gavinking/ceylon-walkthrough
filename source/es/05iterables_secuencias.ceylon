@@ -161,9 +161,10 @@ void demoNonempty() {
 }
 
 /*
- 
- We can iterate the indexes and elements of
- a sequence (or any other kind of List).
+
+ Se pueden iterar los índices y los elementos
+ de una secuencia (o cualquier otro subtipo
+ de List). 
  
 */
 
@@ -175,11 +176,12 @@ void demoForWithIndexes() {
 
 /*
 
- Tuples are a special kind of sequence: a 
- typed linked list. Tuple types are specified
- by listing element types in brackets, and a
- tuple is created by listing its elements
- in brackets.
+ Las tuplas son un tipo especial de secuencia:
+ es una lista ligada y con tipos. Para
+ especificar un tipo tupla se listan los tipos
+ de los elementos en corchetes, y una tupla
+ se crea simplemente listando sus elementos
+ entre corchetes.
 
 */
 
@@ -188,8 +190,9 @@ void demoForWithIndexes() {
 
 /*
 
- Elements may be retreived from a tuple 
- without losing any typing information.
+ Los elementos de una tupla se pueden
+ extraer sin perder ninguna información
+ de tipo.
 
 */
 
@@ -204,9 +207,9 @@ void testTupleIndexing() {
 
 /*
 
- EXERCISE
- 
- Go check out the declaration of Tuple to 
- understand how this works!
+ EJERCICIO
+
+ Revisa la declaración de la clase Tuple
+ para entender cómo funciona todo esto! 
 
 */
