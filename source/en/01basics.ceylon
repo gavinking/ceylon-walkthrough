@@ -119,6 +119,38 @@ void values() {
     print("i! = ``intFactorial``");
 }
 
+/*
+
+ A local declaration may have its type 
+ inferred by the compiler. Hover over the 
+ keyword value or function to see the inferred 
+ type of the declaration.
+ 
+ The type of a function parameter cannot be
+ inferred.
+
+*/
+
+void inferredTypes() {
+    value time = process.milliseconds;
+    value nl = process.newline; 
+    function sqr(Float float) => float*float;
+}
+
+/*
+ 
+ EXERCISE
+ 
+ Position the caret over a value or function
+ keyword and select:
+ 
+   Edit > Quick Fix / Assist
+ 
+ And then select the Specify type quick assist
+ from the popup menu. 
+ 
+*/
+
 
 /*
  
