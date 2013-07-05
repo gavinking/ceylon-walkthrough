@@ -225,3 +225,22 @@ void demoGenericFunctions() {
  subexpresiones y ver el tipo de cada una.
 
 */
+
+/*
+
+Ya hemos empezado a ver unos tipos bastante complicados.
+Para facilitar el manejo de tipos así, les podemos
+dar nombres más simples.
+
+*/
+
+alias Predicate<T> => Boolean(T);
+
+Boolean both<T>(Predicate<T> p, T x, T y) =>
+        p(x) && p(y);
+
+void testPredicates() {
+    Predicate<String> length5 = (String s)=>s.size==5;
+    assert(both(length5, "hello", "world"));
+    assert(!both(length5, "goodbye", "world"));
+}
