@@ -119,6 +119,37 @@ void values() {
     print("i! = ``intFactorial``");
 }
 
+/*
+
+El compilador puede inferir el tipo de una
+declaración local. Pon el cursor sobre la
+palabra reservada "value" o "function" para
+ver el tipo inferido de la declaración.
+
+El tipo de un parámetro de una función no
+puede ser inferido.
+
+*/
+
+void inferredTypes() {
+    value time = process.milliseconds;
+    value nl = process.newline; 
+    function sqr(Float float) => float*float;
+}
+
+/*
+
+EJERCICIO
+
+Pon el cursor sobre una palabra reservada
+"value" o "function" y selecciona en el menu:
+
+   Edit > Quick Fix / Assist
+
+Y luego selecciona Specify type quick assist
+del menu que sale.
+
+*/
 
 /*
 
@@ -191,7 +222,7 @@ void printInfo() =>
 
 by ("Gavin")
 throws (Exception)
-deprecated ("BIen, este programa no es muy útil.
+deprecated ("Bien, este programa no es muy útil.
              Prueba [[hello]] mejor.")
 see (hello)
 void failNoisily() {
