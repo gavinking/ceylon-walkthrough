@@ -189,7 +189,7 @@ void demoForWithIndexes() {
 
 /*
 
- Elements may be retreived from a tuple 
+ Elements may be retrieved from a tuple 
  without losing any typing information.
 
 */
