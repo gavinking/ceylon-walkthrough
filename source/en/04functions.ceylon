@@ -221,3 +221,22 @@ void demoGenericFunctions() {
 
 */
 
+/*
+
+ We've now started to see some pretty 
+ complicated types. To make it easier to deal
+ with types like these, we can give them names.
+ 
+*/
+
+alias Predicate<T> => Boolean(T);
+
+Boolean both<T>(Predicate<T> p, T x, T y) =>
+        p(x) && p(y);
+
+void testPredicates() {
+    Predicate<String> length5 = (String s)=>s.size==5;
+    assert(both(length5, "hello", "world"));
+    assert(!both(length5, "goodbye", "world"));
+}
+
