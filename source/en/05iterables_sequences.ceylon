@@ -1,3 +1,4 @@
+
 /*
 
  We've already met the type Iterable. We 
@@ -80,6 +81,22 @@ void demoComprehension() {
 };
 
 /*
+
+ So we often have a choice of two different
+ ways to express something:
+ 
+ - using anonymous functions, or
+ - using a comprehension.
+
+*/
+
+Boolean allNumbers1 = manyStrings.every((String s) => 
+        parseInteger(s) exists);
+
+Boolean allNumbers2 = every { for (s in manyStrings) 
+        parseInteger(s) exists };
+
+/*
  
  A sequence is an immutable sequence of values
  of finite length. Sequence types are written
@@ -105,3 +122,92 @@ void demoComprehension() {
 */
 
 [] emptySeq = [];
+
+/*
+
+ We can access the elements of a sequence (or
+ of any other kind of List) using the index 
+ operator.
+
+*/
+
+void testSequenceIndexing() {
+    
+    //the single-index indexing operator
+    //results in a possibly-null type!
+    //(there is no IndexOutOfBoundsException)
+    assert(exists world = twoStringsSeq[1],
+            world=="world");
+    
+    //the closed and open ranged indexing 
+    //operators result in a sequence
+    assert(manyStringsSeq[1..2]==["1", "2"]);
+    assert(manyStringsSeq[99...]==["99", "100"]);
+    
+}
+
+/*
+ We can narrow a possibly-empty sequence (a
+ [T*]) to nonempty sequence (a [T+]) using the
+ nonempty operator.
+*/
+
+void demoNonempty() {
+    if (nonempty args = process.arguments) {
+        //hover over args and first to see 
+        //their types!
+        value first = args.first;
+        print(first);
+    }
+}
+
+/*
+ 
+ We can iterate the indexes and elements of
+ a sequence (or any other kind of List).
+ 
+*/
+
+void demoForWithIndexes() {
+    for (i->s in twoStringsSeq.indexed) {
+        print("``i`` -> ``s``");
+    }
+}
+
+/*
+
+ Tuples are a special kind of sequence: a 
+ typed linked list. Tuple types are specified
+ by listing element types in brackets, and a
+ tuple is created by listing its elements
+ in brackets.
+
+*/
+
+[Float, Integer, String, String] tuple = 
+        [0.0, 22, "hello", "world"];
+
+/*
+
+ Elements may be retreived from a tuple 
+ without losing any typing information.
+
+*/
+
+void testTupleIndexing() {
+    Null nil1 = tuple[-1];
+    Float float = tuple[0];
+    Integer int = tuple[1];
+    String string1 = tuple[2];
+    String string2 = tuple[3];
+    Null nil2 = tuple[4];
+}
+
+/*
+
+ EXERCISE
+ 
+ Go check out the declaration of Tuple to 
+ understand how this works!
+
+*/
