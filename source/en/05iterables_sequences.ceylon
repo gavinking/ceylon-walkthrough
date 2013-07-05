@@ -98,7 +98,7 @@ Boolean allNumbers2 = every { for (s in manyStrings)
 
 /*
  
- A sequence is an immutable sequence of values
+ A sequence is an immutable list of values
  of finite length. Sequence types are written
  [T*] or [T+]. For reasons of tradition, we 
  are also allowed to write [T*] as T[].
