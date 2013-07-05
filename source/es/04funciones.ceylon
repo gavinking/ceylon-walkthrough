@@ -235,12 +235,13 @@ dar nombres más simples.
 */
 
 alias Predicate<T> => Boolean(T);
+alias StringPredicate => Predicate<String>;
 
 Boolean both<T>(Predicate<T> p, T x, T y) =>
         p(x) && p(y);
 
 void testPredicates() {
-    Predicate<String> length5 = (String s)=>s.size==5;
+    StringPredicate length5 = (String s)=>s.size==5;
     assert(both(length5, "hello", "world"));
     assert(!both(length5, "goodbye", "world"));
 }
