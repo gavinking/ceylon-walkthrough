@@ -194,7 +194,7 @@ void demoForWithIndexes() {
 
 */
 
-void testTupleIndexing() {
+void demoTupleIndexing() {
     Null nil1 = tuple[-1];
     Float float = tuple[0];
     Integer int = tuple[1];
@@ -211,3 +211,21 @@ void testTupleIndexing() {
  understand how this works!
 
 */
+
+/*
+ 
+ We can use the spread operator to pass a tuple
+ containing arguments to a function. Remember that
+ a function type consists of a return type and a
+ tuple type encoding the parameter types? Well, 
+ the spread argument tuple must be assignable to 
+ that tuple type.
+ 
+*/
+
+void demoSpreadTuple() {
+    value args = [(Character c)=>!c.letter, true];
+    for (word in "Hello, World! Goodbye.".split(*args)) {
+        print(word);
+    }
+}

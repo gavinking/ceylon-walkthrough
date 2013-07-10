@@ -213,3 +213,22 @@ void testTupleIndexing() {
  para entender cómo funciona todo esto! 
 
 */
+
+/*
+ 
+ Podemos utilizar el operator spread para pasar
+ una tupla conteniendo argumentos a una funcion.
+ Recuerda que un tipo funcion consiste de un tipo
+ de retorno y una tipo de tupla que representa
+ los tipos de los parametros? Asi, la tupla de
+ argumentos tiene que ser asignable al tipo de
+ tupla de los parametros.
+ 
+*/
+
+void demoSpreadTuple() {
+    value args = [(Character c)=>!c.letter, true];
+    for (word in "Hello, World! Goodbye.".split(*args)) {
+        print(word);
+    }
+}
