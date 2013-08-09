@@ -41,7 +41,7 @@ String({String*}) joinWithCommasFun = ", ".join;
 //(no te preocupes si no los entiendes)
 {Integer*}({Integer?*}) coalesceFun = coalesce<Integer?>;
 String[]({String*}*) joinFun = join<String>;
-{String*}({Character*}|Boolean(Character)=, Boolean=, Boolean=) splitFun = 
+{String*}(Boolean(Character)=, Boolean=, Boolean=) splitFun = 
         "Hello, world! Goodbye :-(".split;
 
 /*

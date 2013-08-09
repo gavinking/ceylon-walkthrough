@@ -222,10 +222,10 @@ void printInfo() =>
 */
 
 by ("Gavin")
-throws (Exception)
+throws (`Exception`)
 deprecated ("Well, this is not a very useful 
              program. Try [[hello]] instead.")
-see (hello)
+see (`hello`)
 void failNoisily() {
     throw Exception("aaaaarrrrrggggghhhhhhh");
 }
