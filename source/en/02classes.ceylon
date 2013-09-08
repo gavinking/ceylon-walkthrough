@@ -68,8 +68,7 @@ void tryOutTime() {
 
  For testing classes, assertions are very 
  useful. Run this function to see an assertion
- failure occur, and then fix the function so 
- that all the assertions pass.
+ failure occur.
 
 */
 
@@ -86,6 +85,15 @@ void testTime() {
     assert (time2==time3);
     assert (time1.secondsSinceMidnight==48600);
 }
+
+/*
+  
+  EXERCISE
+  
+  Fix the Time class so that all the assertions 
+  pass.
+  
+*/
 
 /*
 
@@ -163,7 +171,7 @@ class SecondTime(Integer hour,
      Ooops! The following code contains an error!
      
      First uncomment the code, and then fix the
-     error by adding a default annotation to 
+     error by adding a 'default' annotation to 
      Time.secondsSinceMidnight, above.
      
     */
