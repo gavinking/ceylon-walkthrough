@@ -1,4 +1,3 @@
-
 /*
 
  We've already met the type Iterable. We 
@@ -37,8 +36,8 @@ void demoMapFilterFold() {
             .filter((Integer i) => i%3==0)
             .map((Integer i) => i^2)
             //TODO: replace fold() with String.join()
-            .fold("", (String partial, Integer ii) => 
-                    partial + ", " + ii.string));
+            .fold("", (String partial, Integer ii) 
+                    => partial + ", " + ii.string));
 }
 
 /*
@@ -90,11 +89,13 @@ void demoComprehension() {
 
 */
 
-Boolean allNumbers1 = manyStrings.every((String s) => 
-        parseInteger(s) exists);
+Boolean allNumbers1 = manyStrings.every((String s) 
+        => parseInteger(s) exists);
 
-Boolean allNumbers2 = every { for (s in manyStrings) 
-        parseInteger(s) exists };
+Boolean allNumbers2 = every { 
+    for (s in manyStrings) 
+            parseInteger(s) exists 
+};
 
 /*
  
@@ -184,8 +185,8 @@ void demoForWithIndexes() {
 
 */
 
-[Float, Integer, String, String] tuple = 
-        [0.0, 22, "hello", "world"];
+[Float, Integer, String, String] tuple 
+        = [0.0, 22, "hello", "world"];
 
 /*
 
@@ -224,7 +225,7 @@ void demoTupleIndexing() {
 */
 
 void demoSpreadTuple() {
-    value args = [(Character c)=>!c.letter, true];
+    value args = [(Character c) => !c.letter, true];
     for (word in "Hello, World! Goodbye.".split(*args)) {
         print(word);
     }
