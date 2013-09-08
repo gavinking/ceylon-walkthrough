@@ -31,8 +31,8 @@ Float(Float, Float) plusFun = plus<Float>;
 Integer(Integer*) sumFun = sum;
 
 //classes are functions too!
-Range<Integer>(Integer, Integer) rangeFun =
-        Range<Integer>;
+Range<Integer>(Integer, Integer) rangeFun 
+        = Range<Integer>;
 
 //even methods are functions
 String({String*}) joinWithCommasFun = ", ".join;
@@ -40,14 +40,17 @@ String({String*}) joinWithCommasFun = ", ".join;
 //some crazy examples (don't sweat them)
 {Integer*}({Integer?*}) coalesceFun = coalesce<Integer?>;
 String[]({String*}*) joinFun = join<String>;
-{String*}(Boolean(Character)=, Boolean=, Boolean=) splitFun = 
-        "Hello, world! Goodbye :-(".split;
+{String*}(Boolean(Character)=, Boolean=, Boolean=) splitFun 
+        = "Hello, world! Goodbye :-(".split;
 
 /*
  
  Given a value with a function type, we can do
  almost everything we can do with the actual
  function.
+ 
+ (Note: the one thing we can't do is pass named 
+ arguments.)
  
 */
 
@@ -118,17 +121,17 @@ void testApply() {
 /*
  
  It's even possible to write an "anonymous"
- function, inline within an expression.
+ function, inline, within an expression.
  
 */
 
 //TODO: change to a regular function definition
-Float(Float, Float) timesFun = 
-        (Float x, Float y) => x*y;
+Float(Float, Float) timesFun 
+        = (Float x, Float y) => x*y;
 
 //TODO: change to a regular function definition
-Anything(String) printTwiceFun =
-        void (String s) { 
+Anything(String) printTwiceFun 
+        = void (String s) { 
             print(s); 
             print(s);
         };
@@ -155,8 +158,8 @@ Anything(String) printTwiceFun =
 void demoAnonFunction() {
     
     {String*} result = combine(
-            (String s, Integer i) => 
-                    s.repeat(i), 
+            (String s, Integer i) 
+                => s.repeat(i), 
             "oh hello world goodbye".split(), 
             1..10);
     
@@ -175,13 +178,42 @@ void demoAnonFunction() {
 
 */
 
-String repeat(Integer times)(String s) =>
-   (" "+s).repeat(times)[1...];
+String repeat(Integer times)(String s) 
+        => (" "+s).repeat(times)[1...];
 
 void demoCurriedFunction() {
     String(String) thrice = repeat(3);
     print(thrice("hello"));
     print(thrice("bye"));
+}
+
+/*
+  
+  There's one place we very commonly 
+  encounter functions in curried form:
+  "static" method references.
+  
+*/
+
+String({String*})(String) staticJoinFun = String.join;
+
+void testStaticMethodRef() {
+    value joinWithCommas = staticJoinFun(", ");
+    value string = joinWithCommas({"hello", "world"});
+    print(string);
+}
+
+/*
+  
+  Static attribute references are especially useful,
+  especially in combination with the map() method.
+  
+*/
+
+void testStaticAttributeRef() {
+    value words = {"hi", "hello", "hola", "jambo"};
+    value lengths = words.map(String.size);
+    print(lengths);
 }
 
 /*
@@ -232,12 +264,16 @@ void demoGenericFunctions() {
 alias Predicate<T> => Boolean(T);
 alias StringPredicate => Predicate<String>;
 
-Boolean both<T>(Predicate<T> p, T x, T y) =>
-        p(x) && p(y);
+Boolean both<T>(Predicate<T> p, T x, T y) 
+        => p(x) && p(y);
 
 void testPredicates() {
-    StringPredicate length5 = (String s)=>s.size==5;
+    
+    StringPredicate length5 
+            = (String s) => s.size==5;
+    
     assert(both(length5, "hello", "world"));
     assert(!both(length5, "goodbye", "world"));
+    
 }
 
