@@ -72,7 +72,7 @@ void helloArguments() {
 
 /*
  
- The then and else operators produce and 
+ The 'then' and 'else' operators produce and 
  consume null values.
  
 */
@@ -139,7 +139,7 @@ void testThird() {
 
 /*
 
- Cute observation: the type of thrd above is
+ Cute observation: the type of 'thrd' above is
  <Null|Character>&Object, which expands to
  Null&Object|Character&Object, which simplifies
  to Nothing|Character, which further simplifies 
@@ -196,9 +196,40 @@ void demoSets() {
  
  Explain why the type of the intersection
  chars&ints above is Set<Nothing>, given that
- the type Character and the type Integer are
+ the types Character and the type Integer are
  disjoint types (have no instances in common).
+ 
+ P.S. Character and Integer are final classes,
+      unrelated by inheritance, and therefore 
+      disjoint.
 
+*/
+
+/*
+ 
+ Wait, if Nothing has no values, what is the
+ meaning of the following well-typed code?
+ 
+*/
+
+void thereIsNoNothing() {
+    Nothing n = nothing;
+    print(n);
+}
+
+/*
+ 
+ Well, the type Nothing indicates, in practice,
+ that a invocation of a function or evaluation
+ of a value either:
+ 
+ - does not terminate, or
+ - throws in an exception.
+ 
+ It might seem that Nothing isn't very useful 
+ for anything, but it helps a lot when defining
+ generic types and generic functions.
+ 
 */
 
 /*
@@ -259,5 +290,7 @@ void demoMax() {
 
  Check out the definitions of max() and
  Iterable and figure out how this works!
+ 
+ The solution involves Nothing ;-)
 
 */
