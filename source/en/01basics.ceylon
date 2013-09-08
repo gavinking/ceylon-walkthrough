@@ -13,14 +13,25 @@ void hello() {
 }
 
 /*
+  
+  EXERCISE
+  
+  You probably want to know what print() does!
+  You can either:
+  
+  - hover over the name of the function to see
+    its documentation, or
+  - hold down the ctrl or command key while
+    clicking the name of the function to 
+    navigate to its declaration.
+  
+*/
+
+/*
 
  hello() and print() are examples of toplevel 
  functions - we don't need an instance of an 
  object to invoke them.
- 
- To see the definition of print(), hold down
- the command or ctrl key and click on its 
- name.
  
  A toplevel function may accept arguments and
  return a value, in which case we must specify 
@@ -84,6 +95,43 @@ void calculateSums() {
 }
 
 /*
+  
+  Variables are called "values" in Ceylon,
+  because they're not actually variable
+  by default!
+  
+*/
+
+void greet() {
+    String greeting = "hei verden";
+    //TODO: use the IDE to fill in the rest!
+}
+
+/*
+  
+  EXERCISE
+  
+  Fill in the rest of this function. No, we 
+  don't want you to write a trivial call to
+  print() by hand. We want you to let the 
+  IDE do it for you:
+  
+  - Type part of the name of the function
+    you want to call.
+  
+  - ctrl-space activates autocompletion.
+  
+  - Selecting a function puts you into linked
+    mode where you can quickly fill in the 
+    arguments. Use tab to navigate between
+    them.
+  
+  - esc or a typed character outside the 
+    linked mode fields exits linked mode.
+  
+*/
+
+/*
  
  A value may be a constant (within a certain
  scope), a variable, or a getter.
@@ -133,7 +181,7 @@ void values() {
 
 void inferredTypes() {
     value time = process.milliseconds;
-    value nl = process.newline; 
+    value nl = process.newline;
     function sqr(Float float) => float*float;
 }
 
@@ -146,8 +194,12 @@ void inferredTypes() {
  
    Edit > Quick Fix / Assist
  
- And then select the Specify type quick assist
- from the popup menu. 
+ And then select the 'Specify type' quick assist
+ from the popup menu.
+ 
+ Or: select the whole function, and select:
+ 
+   Source > Reveal Inferred Types
  
 */
 
@@ -155,7 +207,7 @@ void inferredTypes() {
 /*
  
  Unicode character escapes are really useful.
- For example pi can be written \{#03C0}. 
+ For example, pi can be written \{#03C0}. 
  
  Ooops, the Eclipse console is braindead!
  Go to:
@@ -171,20 +223,31 @@ void helloPi() => print(greeting("\{#03C0}"));
 
 /*
 
- What if we want to actually print "\{#03C0}"?
- We can use a backslash escape, or a verbatim
- string.
+  Or, much more verbose, but also much more 
+  understandable, we can use the unicode
+  character name.
 
 */
 
-void printTheUnicodeEscapeForPi() {
+void helloPi2() => print(greeting("\{GREEK SMALL LETTER PI}"));
+
+
+/*
+
+ What if we want to actually literally print 
+ the string "\{#03C0}"? We can use a backslash 
+ escape, or a verbatim string.
+
+*/
+
+void printTheUnicodeEscapesForPi() {
     
     //the escape \\ is a literal backslash
     print("\\{#03C0}");
     
     //triple-double-quotes delimit a verbatim 
     //string with no escape characters
-    print("""\{#03C0}""");
+    print("""\{GREEK SMALL LETTER PI}""");
     
 }
 
@@ -193,8 +256,8 @@ void printTheUnicodeEscapeForPi() {
  String literals may span multiple lines. We
  especially use multi-line string literals to 
  specify API documentation in markdown format. 
- Hover over this function to see its 
- documentation.
+ Hover over the name of this function to see 
+ its documentation.
  
 */
 
@@ -217,15 +280,15 @@ void printInfo() =>
 /*
 
  Annotations specify metadata about a program
- element.
+ element. Hover over the name of this function.
 
 */
 
 by ("Gavin")
-throws (`Exception`)
+throws (`class Exception`)
 deprecated ("Well, this is not a very useful 
              program. Try [[hello]] instead.")
-see (`hello`)
+see (`function hello`)
 void failNoisily() {
     throw Exception("aaaaarrrrrggggghhhhhhh");
 }
