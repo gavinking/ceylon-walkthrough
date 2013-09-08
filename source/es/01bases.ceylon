@@ -221,12 +221,12 @@ void printInfo() =>
 */
 
 by ("Gavin")
-throws (`Exception`)
+throws (`class Exception`)
 deprecated ("Bien, este programa no es muy útil.
              Prueba [[hello]] mejor.")
-see (`hello`)
+see (`function hello`)
 void failNoisily() {
-    throw Exception("aaaaarrrrrggggghhhhhhh");
+    throw Exception("¡aaaaarrrrrggggghhhhhhh!");
 }
 
 /*
