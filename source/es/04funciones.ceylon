@@ -40,7 +40,7 @@ String({String*}) joinWithCommasFun = ", ".join;
 //Algunos ejemplos muy locos
 //(no te preocupes si no los entiendes)
 {Integer*}({Integer?*}) coalesceFun = coalesce<Integer?>;
-String[]({String*}*) joinFun = join<String>;
+String[]({String*}*) joinFun = concatenate<String>;
 {String*}(Boolean(Character)=, Boolean=, Boolean=) splitFun = 
         "Hello, world! Goodbye :-(".split;
 

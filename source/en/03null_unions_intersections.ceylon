@@ -153,7 +153,7 @@ void testThird() {
 
 void demoTypeInference() {
     //hover over joined to see its type!
-    value joined = join("hello", 1..69);
+    value joined = concatenate("hello", 1..69);
     Object[] objects = joined;
     print(objects);
 }
