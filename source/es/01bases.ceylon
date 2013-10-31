@@ -132,8 +132,8 @@ puede ser inferido.
 */
 
 void inferredTypes() {
-    value time = process.milliseconds;
-    value nl = process.newline; 
+    value time = system.milliseconds;
+    value nl = operatingSystem.newline; 
     function sqr(Float float) => float*float;
 }
 
@@ -209,8 +209,8 @@ void printTheUnicodeEscapeForPi() {
  definidos en `ceylon.language`, el módulo
  de lenguaje de Ceylon." 
 void printInfo() =>
-        print("Máquina virtual: ``process.vm``
-               versión: ``process.vmVersion``
+        print("Máquina virtual: ``operatingSystem.name``
+               versión: ``operatingSystem.version``
                lenguaje: ``language.version`` (``language.versionName``)");
               //tip: Intenta usar el atributo "normalized" de la cadena.
 
