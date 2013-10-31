@@ -180,8 +180,8 @@ void values() {
 */
 
 void inferredTypes() {
-    value time = process.milliseconds;
-    value nl = process.newline;
+    value time = system.milliseconds;
+    value nl = operatingSystem.newline;
     function sqr(Float float) => float*float;
 }
 
@@ -271,8 +271,8 @@ void printTheUnicodeEscapesForPi() {
  objects defined in `ceylon.language`, the 
  Ceylon language module."
 void printInfo() =>
-        print("virtual machine: ``process.vm``
-               version: ``process.vmVersion``
+        print("virtual machine: ``operatingSystem.name``
+               version: ``operatingSystem.version``
                language: ``language.version`` (``language.versionName``)");
               //hint: try using the normalized 
               //      attribute of String
