@@ -157,10 +157,10 @@ Anything(String) printTwiceFun =
 
 void demoAnonFunction() {
     
-    {String*} result = combine(
+    {String*} result = zip(
             (String s, Integer i) => 
                     s.repeat(i), 
-            "oh hello world goodbye".split(), 
+            "pues hola mundo adios".split(), 
             1..10);
     
     print(" ".join(result));
