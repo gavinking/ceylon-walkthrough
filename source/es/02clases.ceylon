@@ -29,7 +29,7 @@ class Time(shared Integer hour,
            shared Integer minute) {
     
     shared Integer secondsSinceMidnight =>
-            minute%60*60 + hour%24*60*60;
+            minute%60*60 + hour*60*60;
     
     shared actual Integer hash => 
             secondsSinceMidnight;
@@ -69,8 +69,7 @@ void tryOutTime() {
 
  Las aserciones son muy útiles para probar
  clases. Corre esta función para ver cómo
- ocurre una falla de aserción, y luego arregla
- la función para que todas las aserciones pasen.
+ ocurre una falla de aserción.
 
 */
 
@@ -84,9 +83,17 @@ void testTime() {
     assert (time3.string=="13:29");
     assert (time1==time2);
     assert (time1!=time3);
-    assert (time2==time3);
     assert (time1.secondsSinceMidnight==48600);
 }
+
+/*
+ 
+ EJERCICIO
+ 
+ Modificar la clase Time para que las aserciones 
+ pasen.
+ 
+ */
 
 /*
 

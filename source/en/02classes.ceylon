@@ -28,7 +28,7 @@ class Time(shared Integer hour,
            shared Integer minute) {
     
     shared Integer secondsSinceMidnight =>
-            minute%60*60 + hour%24*60*60;
+            minute%60*60 + hour*60*60;
     
     shared actual Integer hash => 
             secondsSinceMidnight;
@@ -82,7 +82,6 @@ void testTime() {
     assert (time3.string=="13:29");
     assert (time1==time2);
     assert (time1!=time3);
-    assert (time2==time3);
     assert (time1.secondsSinceMidnight==48600);
 }
 
