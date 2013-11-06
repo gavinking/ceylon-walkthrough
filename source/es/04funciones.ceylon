@@ -171,11 +171,6 @@ void demoAnonFunction() {
 
  Una función currificada es una función
  con múltiples listas de parámetros.
-  
- Las funciones currificadas son especialmente
- útiles para representar métodos sin
- tener que proveer un objeto receptor
- (próximamente en M6).
 
 */
 
@@ -186,6 +181,37 @@ void demoCurriedFunction() {
     String(String) thrice = repeat(3);
     print(thrice("hello"));
     print(thrice("bye"));
+}
+
+//TODO: Traducir:
+
+/*
+ 
+ There's one place we very commonly 
+ encounter functions in curried form:
+ "static" method references.
+ 
+ */
+
+String({String*})(String) staticJoinFun = String.join;
+
+void testStaticMethodRef() {
+    value joinWithCommas = staticJoinFun(", ");
+    value string = joinWithCommas({"hello", "world"});
+    print(string);
+}
+
+/*
+ 
+ Static attribute references are especially useful,
+ especially in combination with the map() method.
+ 
+ */
+
+void testStaticAttributeRef() {
+    value words = {"hi", "hello", "hola", "jambo"};
+    value lengths = words.map(String.size);
+    print(lengths);
 }
 
 /*

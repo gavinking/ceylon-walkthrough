@@ -172,10 +172,6 @@ void demoAnonFunction() {
   A "curried" function is a function with
   multiple parameter lists.
   
-  Curried functions are especially useful
-  for representing methods without supplying
-  a receiving object. (Coming in M6!)
-
 */
 
 String repeat(Integer times)(String s) 

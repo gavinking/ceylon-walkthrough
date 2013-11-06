@@ -197,6 +197,50 @@ void testSecondTime() {
     assert (stime2.string=="13:30:25");
 }
 
+//TODO: Traducir:
+
+/*
+ 
+ An anonymous class declaration defines an 
+ instance.
+ 
+ */
+
+object midnight extends SecondTime(0,0,0) {
+    //TODO: uncomment and fix the error
+    //string => "midnight";
+}
+
+/*
+ 
+ The above anonymous class is a singleton, because
+ it occurs as a toplevel declaration. But not
+ every anonymous class is a singleton.
+ 
+ (Don't worry about the "satisfies" keyword for
+ now. We'll come back to that when we discuss
+ interfaces.) 
+ 
+ */
+
+//this anonymous class is a singleton
+object naturals 
+        satisfies Iterable<Integer> {
+    
+    shared actual Iterator<Integer> iterator() {
+        //a new instance of this anonymous class 
+        //is created each time iterator() is 
+        //called
+        object iterator 
+                satisfies Iterator<Integer> {
+            variable value int = 1;
+            next() => int++;
+        }
+        return iterator;
+    }
+    
+}
+
 /*
 
  Una clase abstracta es una clase que no se
