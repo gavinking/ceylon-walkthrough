@@ -205,6 +205,23 @@ void demoTupleIndexing() {
 }
 
 /*
+ 
+ Really, all this is just syntax sugar for
+ the Tuple class. We always use the sugar
+ in this case; we never want to write the 
+ following:
+ 
+ */
+
+void desugaredTuple() {
+    Tuple<Float|String,Float,Tuple<String,String,Empty>> pair 
+            = Tuple(1.0,Tuple("hello",[]));
+    Float float = pair.first;
+    String string = pair.rest.first;
+    Null nil = pair.rest.rest.first;
+}
+
+/*
 
  EXERCISE
  
@@ -229,4 +246,56 @@ void demoSpreadTuple() {
     for (word in "Hello, World! Goodbye.".split(*args)) {
         print(word);
     }
+}
+
+/*
+ 
+ We can use tuples to define functions with multiple 
+ return values.
+ 
+ */
+
+//a function that produces a tuple
+[String, String?, String] parseName(String name) {
+    value it = name.split().iterator();
+    "first name is required"
+    assert (is String first = it.next());
+    "last name is required"
+    assert (is String second = it.next());
+    if (is String third = it.next()) {
+        return [first, second, third];
+    }
+    else {
+        return [first, null, second];
+    }
+}
+
+/*
+ 
+ The spread operator and the unflatten() function 
+ help us compose such functions.
+ 
+ */
+
+//a function with multiple parameters
+String welcome(String first, String? middle, String last) => 
+        "Welcome, ``first`` ``last``!";
+
+void demoFunctionComposition() {
+    //the * operator "spreads" the tuple result
+    //of parseName() over the parameters of
+    //greeting 
+    print(welcome(*parseName("John Doe")));
+    
+    //but what if we want to compose parseName()
+    //and greeting() without providing arguments
+    //up front? Well, we can use compose() and
+    //unflatten()
+    value greet = compose(print, 
+    compose(unflatten(welcome), parseName)); 
+    greet("Jane Doe");
+    
+    //so we could actually re-express the first
+    //example in terms of unflatten()
+    print(unflatten(welcome)(parseName("Jean Doe"))); 
 }

@@ -91,7 +91,7 @@ void testTime() {
 /*
 
  Algunas clases tienen estado mutable. Si un
- atributo es mutable, debe ser anotado "variable"
+ atributo es mutable, debe ser anotado "variable".
 
 */
 
