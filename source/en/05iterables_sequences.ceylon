@@ -20,7 +20,7 @@
 
 {String*} noStrings = {};
 {String+} twoStrings = {"hello", "world"};
-{String+} manyStrings = { for (i in 0..100) i.string };
+{String+} manyStrings = { for (n in 0..100) n.string };
 
 /*
  
@@ -113,7 +113,7 @@ Boolean allNumbers2 = every {
 
 [String*] noStringsSeq = [];
 [String+] twoStringsSeq = ["hello", "world"];
-[String+] manyStringsSeq = [ for (i in 0..100) i.string ];
+[String+] manyStringsSeq = [ for (n in 0..100) n.string ];
 
 /*
  
