@@ -146,8 +146,8 @@ void loop() {
  
  */
 
-"A complex number class demonstrating operator polymorphism 
- in Ceylon."
+"A complex number class demonstrating operator 
+ polymorphism in Ceylon."
 class Complex(shared Float re, shared Float im=0.0) 
         satisfies Exponentiable<Complex,Integer> {
     
