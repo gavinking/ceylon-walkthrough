@@ -157,7 +157,7 @@ Anything(String) printTwiceFun
 
 void demoAnonFunction() {
     
-    {String*} result = combine(
+    {String*} result = mapPairs(
             (String s, Integer i) 
                 => s.repeat(i), 
             "oh hello world goodbye".split(), 
