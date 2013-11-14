@@ -1,0 +1,115 @@
+/*
+ 
+ When a function has many parameters, it's
+ better to list its arguments by name. Named
+ argument lists are enclosed in braces, and
+ individual arguments are separated by 
+ semicolons.
+ 
+ */
+
+void namedArgLists() {
+    value entry1 = Entry { key = 1; item = "once"; };
+    value entry2 = Entry { item = "twice"; key = 2; };
+    value int1 = parseInteger { string = "1000101"; radix = 2; };
+    value int2 = parseInteger { radix = 16; string = "1000101";  };
+    print(entry1);
+    print(entry2);
+    print(int1);
+    print(int2);
+}
+
+/*
+ 
+ Even within a named argument list, we're 
+ allowed to list the first arguments 
+ positionally. (The reason for this will 
+ become clear below.)
+ 
+ */
+
+void namedArgListsWithPositionalArgs() {
+    Entry { 1; item = "once"; };
+    Entry { 2; "twice"; };
+    parseInteger { "1000101"; radix = 2; };
+    parseInteger { "1000101"; 16; };
+}
+
+/*
+ 
+ At the end of a named argument list, we may
+ list additional arguments, separated by
+ commas, which are interpreted as arguments
+ to the first parameter of type Iterable
+ which does not already have an argument.
+ 
+ This is the usual syntax we use for 
+ instantiating container types with an 
+ initially fixed list of elements.
+ 
+ */
+
+void namedArgListsWithIterableArgs() {
+    value hello = String { 'H', 'e', 'l', 'l', 'o' };
+    value iter = entries { "once", "twice", "thrice" };
+    value set = LazySet { 0, 1, -1 };
+    value map = LazyMap { 1->"once", 2->"twice", 3->"thrice", 0->"never" };
+    print(hello);
+    print(iter);
+    print(set);
+    print(map);
+}
+
+/*
+ 
+ In Ceylon, anywhere we can write an 
+ arbitrary-length list of values, we can also
+ write a comprehension or use the spread
+ operator.
+ 
+ */
+
+void namedArgListsWithComprehensionArgs() {
+    value hello = String { for (c in "HELLO") c.lowercased };
+    value iter = entries { "once", "twice", "thrice" };
+    value set = LazySet { *hello };
+    value map = LazyMap { 0->"never", *iter };
+    print(hello);
+    print(iter);
+    print(set);
+    print(map);
+}
+
+/*
+ 
+ We can pass a function as an argument using
+ a very natural syntax.
+ 
+ */
+
+void namedFunctionalArg() {
+    value iter = mapPairs {
+        firstArguments = 1..5; 
+        secondArguments = {
+            "once", 
+            "twice", 
+            "thrice", 
+            "four times", 
+            "five times"
+        };
+        function collecting(Integer num, String word)
+                => num -> word;
+    };
+    print(iter);
+}
+
+/*
+ 
+ All this seems like a lot of new syntax! But
+ there's a deeper purpose behind it: named 
+ argument lists provide us with a very
+ flexible syntax for defining tree-like 
+ structures. This has many applications, from
+ build scripts to user interfaces.
+ 
+ */
