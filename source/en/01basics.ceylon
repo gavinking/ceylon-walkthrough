@@ -4,7 +4,7 @@
  parameters. To run the program, select the 
  function name and go to: 
  
-   Run > Run As > Ceylon Application
+   Run > Run As > Ceylon Java Application
    
 */
 
