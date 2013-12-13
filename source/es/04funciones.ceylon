@@ -30,7 +30,7 @@ Float(Float, Float) plusFun = plus<Float>;
 //sum() tiene un parámetro variádico.
 Integer(Integer*) sumFun = sum;
 
-//Las clases también son funciones!
+//¡Las clases también son funciones!
 Range<Integer>(Integer, Integer) rangeFun =
         Range<Integer>;
 
@@ -83,7 +83,7 @@ Anything(String) printStringFun = printFun;
 //es una función que retorna Iterable.
 {Integer+}(Integer, Integer) iterableFun = rangeFun;
 
-//Una función con un parámetro variáfico también
+//¡Una función con un parámetro variádico también
 //es una función que acepta dos parámetros!
 Integer(Integer, Integer) sumBothFun = sumFun;
 
@@ -140,7 +140,7 @@ Anything(String) printTwiceFun =
 
  EJERCICIO 
 
- Lo que está escrito arriba es un MUY MAL estilo!
+ ¡Lo que está escrito arriba es un MUY MAL estilo!
  El objetivo de las funciones anónimas es pasarlas
  como argumentos a otras funciones.
  Arregla ese código, reescribiéndolo usando la

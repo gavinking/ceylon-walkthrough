@@ -267,7 +267,7 @@ void printTheUnicodeEscapesForPi() {
  - the _version of the virtual machine,_ and
  - the _version of the Ceylon language._
  
- It uses the [[process]] and [[language]] 
+ It uses the [[operatingSystem]] and [[language]] 
  objects defined in `ceylon.language`, the 
  Ceylon language module."
 void printInfo() =>
