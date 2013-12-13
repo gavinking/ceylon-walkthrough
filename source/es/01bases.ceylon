@@ -142,12 +142,12 @@ void inferredTypes() {
 EJERCICIO
 
 Pon el cursor sobre una palabra reservada
-"value" o "function" y selecciona en el menu:
+"value" o "function" y selecciona en el menú:
 
-   Edit > Quick Fix / Assist
+   Source > Quick Fix / Assist
 
 Y luego selecciona Specify type quick assist
-del menu que sale.
+del menú que sale.
 
 */
 
@@ -205,7 +205,7 @@ void printTheUnicodeEscapeForPi() {
  - La _versión de la máquina virtual,_ y
  - La _versión de Ceylon._ 
 
- Utiliza los objetos [[process]] y [[language]]
+ Utiliza los objetos [[operatingSystem]] y [[language]]
  definidos en `ceylon.language`, el módulo
  de lenguaje de Ceylon." 
 void printInfo() =>
@@ -234,7 +234,7 @@ void failNoisily() {
  EJERCICIO
  
  Escribe un programa que imprima todos los
- números primos entre 1 y 100. No olvides documentar
+ números primos entre 1 y 100. ¡No olvides documentar
  tu trabajo! 
   
 */

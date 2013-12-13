@@ -286,7 +286,7 @@ void testLinkedList() {
 
  Escribe un enum estilo Java pero en Ceylon.
  El ejemplo clásico es el de la baraja, con
- los casos corazones, diamantes, espadas y tréboles. 
+ los casos corazones, diamantes, picas y tréboles. 
 
 */
 

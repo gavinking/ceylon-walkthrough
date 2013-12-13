@@ -225,20 +225,20 @@ void desugaredTuple() {
 
  EJERCICIO
 
- Revisa la declaración de la clase Tuple
+ ¡Revisa la declaración de la clase Tuple
  para entender cómo funciona todo esto! 
 
 */
 
 /*
  
- Podemos utilizar el operator spread para pasar
- una tupla conteniendo argumentos a una funcion.
- Recuerda que un tipo funcion consiste de un tipo
- de retorno y una tipo de tupla que representa
- los tipos de los parametros? Asi, la tupla de
+ Podemos utilizar el operador spread para pasar
+ una tupla conteniendo argumentos a una función.
+ Recuerda que un tipo función consta de un tipo
+ de retorno y un tipo de tupla que representa
+ los tipos de los parámetros. Asi, la tupla de
  argumentos tiene que ser asignable al tipo de
- tupla de los parametros.
+ tupla de los parámetros.
  
 */
 

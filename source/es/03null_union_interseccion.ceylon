@@ -59,7 +59,7 @@ void helloArguments() {
  Normalmente usamos el operador "exists" en
  vez de "is String" en código como el anterior.
  Modifica tu programa para que use exists.
- Más azúcar sintáctica! 
+ ¡Más azúcar sintáctica! 
 
  Ahora, para hacer el código un poco más
  compacto, modifícalo para que use esta forma
