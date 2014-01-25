@@ -150,7 +150,7 @@ void testCounter() {
 /*
  
  A subclass may extend our class, and refine
- its members. A class member mat be refined iff
+ its members. A class member may be refined if
  it is annotated default.
   
 */
