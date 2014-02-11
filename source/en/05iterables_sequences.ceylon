@@ -284,11 +284,11 @@ String welcome(String first, String? middle, String last) =>
 void demoFunctionComposition() {
     //the * operator "spreads" the tuple result
     //of parseName() over the parameters of
-    //greeting 
+    //welcome()
     print(welcome(*parseName("John Doe")));
     
     //but what if we want to compose parseName()
-    //and greeting() without providing arguments
+    //and welcome() without providing arguments
     //up front? Well, we can use compose() and
     //unflatten()
     value greet = compose(print, 
