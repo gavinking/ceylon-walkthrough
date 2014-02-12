@@ -1,4 +1,3 @@
-import en { Nothing }
 /*
 
  Un tipo unión representa una elección entre varios tipos.
