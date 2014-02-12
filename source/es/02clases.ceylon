@@ -204,19 +204,17 @@ void testSecondTime() {
     assert (stime2.string=="13:30:25");
 }
 
-//TODO: Traducir:
-
 /*
  
- An anonymous class declaration defines an 
- instance. It's a combination value and
- class declaration.
+ Una declaración de clase anónima define una
+ instancia. Es una declaración combinada de
+ valor y clase.
  
- */
+*/
 
 object midnight extends SecondTime(0,0,0) {
-    //TODO: uncomment and fix the error
-    //string => "midnight";
+    //TODO: descomentar y arreglar el error
+    //string => "medianoche";
 }
 
 /*

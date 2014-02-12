@@ -50,6 +50,9 @@ String[]({String*}*) joinFun = concatenate<String>;
  hacer casi cualquier cosa que se puede hacer
  con la función referida.
  
+ (Nota: lo que no se puede hacer es pasar
+ argumentos con nombre.)
+ 
 */
 
 void demoFunctionRefs() {
@@ -183,13 +186,11 @@ void demoCurriedFunction() {
     print(thrice("bye"));
 }
 
-//TODO: Traducir:
-
 /*
  
- There's one place we very commonly 
- encounter functions in curried form:
- "static" method references.
+ Hay un sitio en el que encontramos comúnmente
+ funciones en forma currificada: referencias
+ "estáticas" a métodos.
  
  */
 
@@ -203,8 +204,9 @@ void testStaticMethodRef() {
 
 /*
  
- Static attribute references are especially useful,
- especially in combination with the map() method.
+ Las referencias estáticas a atributos son
+ especialmente útiles, sobre todo en combinación
+ con el método map().
  
  */
 
@@ -225,7 +227,7 @@ void testStaticAttributeRef() {
 
  Las funciones más útiles de este tipo son
  compose(), curry(), shuffle(), y uncurry(). 
- Estas son funciones normales, escritas
+ ¡Estas son funciones normales, escritas
  completamente en Ceylon!
 
 */
