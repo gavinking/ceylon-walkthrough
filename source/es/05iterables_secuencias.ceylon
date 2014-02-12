@@ -289,7 +289,7 @@ void demoFunctionComposition() {
     print(welcome(*parseName("John Doe")));
     
     //pero ¿y si queremos componer parseName()
-    //y greeting() sin proporcionar los
+    //y welcome() sin proporcionar los
     //argumentos por adelantado? Bien, podemos
     //usar compose() y unflatten()
     value greet = compose(print, 
