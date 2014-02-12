@@ -152,7 +152,7 @@ void testSequenceIndexing() {
 
 void demoNonempty() {
     if (nonempty args = process.arguments) {
-        //Pon el mouse sobre args y first
+        //Pon el cursor sobre args y first
         //para ver sus tipos!
         value first = args.first;
         print(first);
@@ -249,16 +249,14 @@ void demoSpreadTuple() {
     }
 }
 
-//TODO: Traducir ultimo ejemplo
-
 /*
  
- We can use tuples to define functions with multiple 
- return values.
+ Podemos usar tuplas para definir funciones con
+ múltiples valores de retorno.
  
  */
 
-//a function that produces a tuple
+//una función que produce una tupla
 [String, String?, String] parseName(String name) {
     value it = name.split().iterator();
     "first name is required"
@@ -275,30 +273,30 @@ void demoSpreadTuple() {
 
 /*
  
- The spread operator and the unflatten() function 
- help us compose such functions.
+ El operador spread y la función unflatten() nos 
+ ayudan a componer este tipo de funciones.
  
  */
 
-//a function with multiple parameters
+//una función con múltiples parámetros
 String welcome(String first, String? middle, String last) => 
         "Welcome, ``first`` ``last``!";
 
 void demoFunctionComposition() {
-    //the * operator "spreads" the tuple result
-    //of parseName() over the parameters of
-    //greeting 
+    //el operador * "esparce" la tupla
+    //resultado de parseName() sobre los
+    //parámetros de welcome()
     print(welcome(*parseName("John Doe")));
     
-    //but what if we want to compose parseName()
-    //and greeting() without providing arguments
-    //up front? Well, we can use compose() and
-    //unflatten()
+    //pero ¿y si queremos componer parseName()
+    //y welcome() sin proporcionar los
+    //argumentos por adelantado? Bien, podemos
+    //usar compose() y unflatten()
     value greet = compose(print, 
     compose(unflatten(welcome), parseName)); 
     greet("Jane Doe");
     
-    //so we could actually re-express the first
-    //example in terms of unflatten()
+    //así que en realidad podríamos reescribir el
+    //primer ejemplo en términos de unflatten()
     print(unflatten(welcome)(parseName("Jean Doe"))); 
 }

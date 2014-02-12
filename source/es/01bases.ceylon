@@ -14,13 +14,24 @@ void hello() {
 }
 
 /*
+ 
+ EJERCICIO
+ 
+ ¡Probablemente quieras saber lo que hace
+ print()! Puedes:
+ - poner el cursor sobre el nombre de la
+   función para ver su documentación, o
+ - mantener pulsada la tecla ctrl o command
+   mientras haces click sobre el nombre de la
+   función para navegar a su declaración.
+ 
+*/
+
+/*
 
  hola() y print() son ejemplos de funciones de
  primer nivel - no necesitamos una instancia
  de un objeto para invocarlas.
-
- Para ver la definición de print(), haz click
- sobre su nombre con la tecla CTRL/CMD oprimida.
 
  Una función de primer nivel puede aceptar
  argumentos y devolver un valor, en cuyo caso
@@ -31,10 +42,10 @@ void hello() {
 
 */
 
-String greeting(String nombre = "Mundo") {
+String greeting(String name = "Mundo") {
     //Las expresiones interpoladas se rodean
     //con doble "backtick" dentro de una cadena.
-    return "Hola, ``nombre``!";
+    return "Hola, ``name``!";
 }
 
 /*
@@ -55,9 +66,9 @@ void helloWorld() => print(greeting());
  
 */
 
-Integer sum(Integer* numeros) {
+Integer sum(Integer* numbers) {
     variable value sum = 0; //Los valores asignables deben anotarse con "variable"
-    for (x in numeros) {
+    for (x in numbers) {
         sum+=x;
     }
     return sum;
@@ -71,8 +82,9 @@ void calculateSums() {
     //La suma de dos números
     print(sum(2, 2));
     
-    //La suma de los números del 1 al 10
+    //La suma de los números del 0 al 10
     //inclusive, usando el operador de rango ..
+    //y el operador spread *
     print(sum(*(0..10)));
    
     //Y para algo más interesante, la suma
@@ -81,6 +93,44 @@ void calculateSums() {
     print(sum(for (n in 0..10) n^2));
     
 }
+
+/*
+ 
+ Las variables se llaman "valores" en Ceylon,
+ ¡porque realmente no son variables por defecto!
+ 
+*/
+
+void greet() {
+	String greeting = "hei verden";
+	//TODO: ¡usa el IDE para rellenar el resto!
+}
+
+/*
+ 
+ EJERCICIO
+ 
+ Rellena el resto de esta función. No, no
+ queremos que escribas a mano una llamada
+ trivial a print(). Queremos que dejes al IDE
+ hacerlo por ti:
+ 
+ - Teclea parte del nombre de la función a la que
+   quieres llamar.
+ 
+ - ctrl-espacio activa el autocompletado.
+ 
+ - Seleccionar una función te lleva al modo
+   enlazado, donde puedes rellenar rápidamente
+   los argumentos. Utiliza el tabulador para
+   navegar entre ellos.
+ 
+ - esc o un caracter tecleado fuera de los
+   campos del modo enlazado abandona el modo
+   enlazado.
+ 
+*/
+
 
 /*
 
@@ -139,16 +189,20 @@ void inferredTypes() {
 
 /*
 
-EJERCICIO
-
-Pon el cursor sobre una palabra reservada
-"value" o "function" y selecciona en el menú:
-
+ EJERCICIO
+ 
+ Pon el cursor sobre una palabra reservada
+ "value" o "function" y selecciona en el menú:
+ 
    Source > Quick Fix / Assist
-
-Y luego selecciona Specify type quick assist
-del menú que sale.
-
+ 
+ Y luego selecciona 'Specify type' del menú
+ emergente.
+ 
+ O, selecciona la función completa, y la opción:
+ 
+   Source > Reveal Inferred Types
+ 
 */
 
 /*
