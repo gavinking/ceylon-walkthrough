@@ -1,3 +1,4 @@
+import en { Nothing }
 /*
 
  Un tipo unión representa una elección entre varios tipos.
@@ -22,10 +23,10 @@ void testDouble() {
 
 /*
 
- Manejamos los valores faltantes o nulos
+ Manejamos los valores ausentes o "nulos"
  usando tipos unión. La clase Null tiene una
  única instancia llamada null, que representa
- un valor faltante. Por lo tanto, una cadena
+ un valor ausente. Por lo tanto, una cadena
  que posiblemente sea nula se representa
  con el tipo Null|String.
 
@@ -116,7 +117,7 @@ void thenAndElse() {
 
 T? third<T>({T*} iterable) {
     if (is Correspondence<Integer, T> iterable) {
-        //Pon el curso sobre iterable para ver
+        //Pon el cursor sobre iterable para ver
         //su tipo acotado dentro de este bloque
         return iterable[2];
     }
@@ -203,6 +204,38 @@ void demoSets() {
  dado que los tipos Character e Integer son
  tipos disjuntos (no tienen instancias en común).
 
+ P.D. Character e Integer son clases finales,
+      no relacionadas por herencia, y por lo tanto 
+      disjuntas.
+
+*/
+
+/*
+ 
+ Espera, si Nothing no tiene valores, ¿cuál es el
+ significado del siguiente código correctamente
+ tipado?
+ 
+*/
+
+void thereIsNoNothing() {
+	Nothing n = nothing;
+	print(n);
+}
+
+/*
+ 
+ Bien, el tipo Nothing indica, en la práctica,
+ que la invocación de una función o la evaluación
+ de un valor:
+ 
+ - no termina, o
+ - lanza una excepción.
+ 
+ Podría parecer que Nothing no es demasiado útil,
+ pero ayuda un montón cuando se definen tipos
+ genéricos y funciones genéricas.
+ 
 */
 
 /*
