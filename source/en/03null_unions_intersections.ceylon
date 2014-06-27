@@ -1,3 +1,4 @@
+import ceylon.collection { HashSet }
 /*
 
  A union type represents a choice between 
@@ -177,8 +178,8 @@ void demoTypeInference() {
 */
 
 void demoSets() {
-    Set<Character> chars = LazySet("hello");
-    Set<Integer> ints = LazySet(0..10);
+    Set<Character> chars = HashSet { elements="hello"; };
+    Set<Integer> ints = HashSet { elements=0..10; };
     //hover over intsAndChars to see its type!
     value intsAndChars = chars|ints;
     print(intsAndChars);
@@ -234,7 +235,7 @@ void thereIsNoNothing() {
 
 /*
 
- The useful coalesce() function also 
+ The useful coalesced attribute also 
  demonstrates a nice application of 
  intersection.
  
@@ -251,9 +252,9 @@ void demoCoalesce() {
     
     //{String*} is the type of an iterable of
     //just strings (without nulls)
-    {String*} strings = coalesce(stringsAndNulls);
+    {String*} strings = stringsAndNulls.coalesced;
     
-    assert (strings.sequence=={"hello", "world"});
+    assert (strings.sequence() == ["hello", "world"]);
     
 }
 

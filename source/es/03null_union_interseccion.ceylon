@@ -1,3 +1,4 @@
+import ceylon.collection { HashSet }
 /*
 
  Un tipo unión representa una elección entre varios tipos.
@@ -181,8 +182,8 @@ void demoTypeInference() {
 */
 
 void demoSets() {
-    Set<Character> chars = LazySet("hello");
-    Set<Integer> ints = LazySet(0..10);
+    Set<Character> chars = HashSet { elements = "hello"; };
+    Set<Integer> ints = HashSet { elements = 0..10; };
     //pon el cursor sobre intsAndChars para ver su tipo
     value intsAndChars = chars|ints;
     print(intsAndChars);
@@ -255,9 +256,9 @@ void demoCoalesce() {
    
     //{String*} es el tipo de un iterable de
     //puras cadenas (sin nulos) 
-    {String*} strings = coalesce(stringsAndNulls);
+    {String*} strings = stringsAndNulls.coalesced;
     
-    assert (strings.sequence=={"hello", "world"});
+    assert (strings.sequence() == ["hello", "world"]);
     
 }
 

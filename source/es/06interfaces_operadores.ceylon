@@ -1,3 +1,4 @@
+import ceylon.collection { StringBuilder }
 /*
  
  Una interfaz define un contrato que puede ser
@@ -155,9 +156,7 @@ void loop() {
 class Complex(shared Float re, shared Float im=0.0) 
         satisfies Exponentiable<Complex,Integer> {
     
-    positiveValue => this;
-
-    negativeValue => Complex(-re,-im);
+    negated => Complex(-re,-im);
 
     plus(Complex other) => Complex(re+other.re, im+other.im);
 

@@ -31,17 +31,18 @@ Float(Float, Float) plusFun = plus<Float>;
 Integer(Integer*) sumFun = sum;
 
 //classes are functions too!
-Range<Integer>(Integer, Integer) rangeFun 
-        = Range<Integer>;
+String({Character*}) strFun = String;
 
 //even methods are functions
 String({String*}) joinWithCommasFun = ", ".join;
 
 //some crazy examples (don't sweat them)
-{Integer*}({Integer?*}) coalesceFun = coalesce<Integer?>;
+{Integer*}({Integer?*}) coalesceFun = Iterable<Integer?>.coalesced;
+
 String[]({String*}*) joinFun = concatenate<String>;
-{String*}(Boolean(Character)=, Boolean=, Boolean=) splitFun 
-        = "Hello, world! Goodbye :-(".split;
+
+{String*}(Boolean(Character)=, Boolean=, Boolean=) 
+splitFun = "Hello, world! Goodbye :-(".split;
 
 /*
  
@@ -58,7 +59,7 @@ void demoFunctionRefs() {
     printFun("Hello!");
     print(sumFun(3, 7, 0));
     print(plusFun(3.0, 7.0));
-    print(rangeFun(0, 20));
+    print(strFun({'h','e','l','l','o'}));
 }
 
 /*
@@ -81,9 +82,9 @@ void demoFunctionRefs() {
 //function that accepts a String
 Anything(String) printStringFun = printFun;
 
-//a function that returns a Range is also a
-//function that returns an Iterable
-{Integer+}(Integer, Integer) iterableFun = rangeFun;
+//a function that returns a String is also a
+//function that returns an Iterable<Character>
+{Character*}({Character*}) iterableFun = strFun;
 
 //a function with a variadic parameter is also
 //a function with two parameters!

@@ -1,3 +1,4 @@
+import ceylon.collection { HashMap, HashSet, StringBuilder }
 /*
  
  When a function has many parameters, it's
@@ -51,9 +52,9 @@ void namedArgListsWithPositionalArgs() {
 
 void namedArgListsWithIterableArgs() {
     value hello = String { 'H', 'e', 'l', 'l', 'o' };
-    value iter = entries { "once", "twice", "thrice" };
-    value set = LazySet { 0, 1, -1 };
-    value map = LazyMap { 1->"once", 2->"twice", 3->"thrice", 0->"never" };
+    value iter = sequence { "once", "twice", "thrice" };
+    value set = HashSet { 0, 1, -1 };
+    value map = HashMap { 1->"once", 2->"twice", 3->"thrice", 0->"never" };
     print(hello);
     print(iter);
     print(set);
@@ -71,9 +72,9 @@ void namedArgListsWithIterableArgs() {
 
 void namedArgListsWithComprehensionArgs() {
     value hello = String { for (c in "HELLO") c.lowercased };
-    value iter = entries { "once", "twice", "thrice" };
-    value set = LazySet { *hello };
-    value map = LazyMap { 0->"never", *iter };
+    value iter = sequence { "once", "twice", "thrice" };
+    value set = HashSet { *hello };
+    value map = HashMap { 0->"never", *iter.indexed };
     print(hello);
     print(iter);
     print(set);
@@ -136,7 +137,7 @@ class Cell({String*} content) {
 }
 
 class Row({Cell*} cell) {
-    shared Cell[] cells = cell.sequence;
+    shared Cell[] cells = cell.sequence();
     shared actual String string {
         value result = StringBuilder();
         result.append("|");
