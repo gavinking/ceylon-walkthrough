@@ -90,8 +90,8 @@ void namedArgListsWithComprehensionArgs() {
 
 void namedFunctionalArg() {
     value iter = mapPairs {
-        firstArguments = 1..5; 
-        secondArguments = {
+        firstIterable = 1..5; 
+        secondIterable = {
             "once", 
             "twice", 
             "thrice", 
