@@ -8,7 +8,7 @@
  - {T+} pour indiquer un iterable de une ou plus
    instances de T
  
- En réalité, ces abréviations signifie respectivement
+ En réalité, ces abréviations signifient respectivement
  Iterable<T,Null> et Iterable<T,Nothing>.
  
  Evidemment, {T+} est un sous-type de {T*}.
@@ -33,7 +33,7 @@ void demoMapFilterFold() {
     print((1..100)
             .filter((Integer i) => i%3==0)
             .map((Integer i) => i^2)
-            //TODO: replace fold() with String.join()
+            //TODO : remplacez fold() par String.join()
             .fold("", (String partial, Integer ii) 
                     => partial + ", " + ii.string));
 }
@@ -79,7 +79,7 @@ void demoComprehension() {
 
 /*
 
- Do nous avons souvent le choix entre deux manières
+ Nous avons souvent le choix entre deux manières
  d'exprimer la même chose :
  
  - en utilisant des fonctions anonymes, ou bien
@@ -126,7 +126,7 @@ Boolean allNumbers2 = every {
 
 /*
 
- Nous pouvons accéder à une élément de la séquence
+ Nous pouvons accéder à un élément de la séquence
  (ou tout autre type de List) en utilisant l'opérateur
  d'index.
 
@@ -291,9 +291,9 @@ void demoFunctionComposition() {
     //welcome()
     print(welcome(*parseName("John Doe")));
     
-    //Mais qu'en est-il si nous voulons composer
+    //Mais comment faire si nous voulons composer
     //parseName() et welcome() sans fournir d'arguments
-    //à l'avance? Et bien nous pouvons utiliser compose()
+    //à l'avance ? Et bien nous pouvons utiliser compose()
     //et unflatten()
     value greet = compose(print, 
     compose(unflatten(welcome), parseName)); 

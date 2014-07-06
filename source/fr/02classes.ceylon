@@ -141,7 +141,7 @@ void testCounter() {
  
 */
 
-//TODO: uncomment this test and get it to pass
+//TODO : décommentez ce test et faites le passer
 //void testReset() {
 //    value counter = Counter();
 //    assert (counter.count==0);
@@ -172,7 +172,7 @@ class SecondTime(Integer hour,
     
     /*
     
-     Oups ! le code ci-dessous contient une erreur !
+     Oups ! Le code ci-dessous contient une erreur !
      
      Commencez par décommenter le code, puis corriger
      l'erreur en ajoutant l'annotation 'default' à
@@ -195,7 +195,7 @@ class SecondTime(Integer hour,
  
 */
 
-//TODO: faite passer l'assertion
+//TODO : faite passer l'assertion
 void testSecondTime() {
     Time time = Time(13,30);
     assert (time.string=="13:30");
@@ -211,12 +211,12 @@ void testSecondTime() {
  
  Une déclaration de classes anonyme définit 
  une instance. Elle combine une déclaration
- de valeur et de classes.
+ de valeur et de classe.
  
  */
 
 object midnight extends SecondTime(0,0,0) {
-    //TODO: décommenter et corriger l'erreur.
+    //TODO : décommenter et corriger l'erreur.
     //string => "midnight";
 }
 

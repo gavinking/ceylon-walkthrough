@@ -36,10 +36,10 @@ void testDouble() {
  Il s'agit simplement de sucre syntaxique pour
  les types union.
  
- Lancez le programme suivant avec puis sans un 
- argument de ligne de commande. Vous pouvez 
- positionner un argument de ligne de commande
- en utilisant :
+ Lancez le programme suivant d'abord avec, puis
+ sans un argument de ligne de commande. Vous
+ pouvez positionner un argument de ligne de
+ commande en utilisant :
  
    Run > Run Configurations... 
  
@@ -176,7 +176,7 @@ void demoTypeInference() {
  
  Allez voir les définitions de ces méthodes
  dans Set afin de constater qu'elles sont
- à leur tour définies en terme de types
+ à leur tour définies en termes de types
  union/intersection.
 
 */
@@ -213,9 +213,9 @@ void demoSets() {
 
 /*
  
- Une seconde ! si Nothing n'a pas de valeur, quelle
+ Une seconde ! Si Nothing n'a pas de valeur, quelle
  est la signification du code suivant qui est
- correctement typé par ailleurs.
+ correctement typé par ailleurs ?
  
 */
 
@@ -233,9 +233,9 @@ void thereIsNoNothing() {
  - ne se termine pas, ou
  - envoie une exception.
  
- Il pourrait sembler que Nothing n'est pas très
- utile, mais en réalité il est d'une grande
- utilité lorsqu'il s'agit de définir des types
+ On pourrait croire que Nothing n'est pas très
+ utile, mais en réalité il aide grandement
+ lorsqu'il s'agit de définir des types
  génériques et des fonctions génériques.
  
 */
@@ -273,9 +273,9 @@ void demoCoalesce() {
  Le problème vient du fait que quand nous avons
  "zéro éléments ou plus", max() peut retourner
  null. Mais quand nous avons "un élément ou
- plus", il ne le peut pas. Et quand nous avons
- exactement zéro éléments, max() retourne
- toujours null. Comment matérialiser ceci
+ plus", ce n'est pas possible. Et quand nous
+ avons exactement zéro éléments, max() retourne
+ toujours null. Comment capturer ceci
  dans le système de type ?
  
 */

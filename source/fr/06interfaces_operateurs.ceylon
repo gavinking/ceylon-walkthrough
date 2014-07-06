@@ -35,7 +35,7 @@ interface Writer {
 /*
  
  Une classe peut satisfaire une interface,
- héritant de ses membres.
+ héritant alors de ses membres.
  
  */
 

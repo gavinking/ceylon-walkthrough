@@ -24,7 +24,7 @@ void namedArgLists() {
  
  Même à l'intérieur d'une liste d'arguments
  nommés, nous pouvons lister le premier
- élément de manière positionnelle. (la raison
+ élément de manière positionnelle. (La raison
  de cela sera explicité ci-dessous)
  
  */
@@ -175,7 +175,7 @@ class Table(String title, Row header, {Row*} rows) {
  
  Maintenant nous pouvons définir une table
  en utilisant une syntaxe particulièrement
- naturelle, ou le code représente la
+ intuitive, ou le code représente la
  structure de la table elle-même :
  
  */
