@@ -144,9 +144,9 @@ Anything(String) printTwiceFun
  
  EXERCICE
  
- Ce que nous venons d'écrire est du très mauvais
+ Ce que nous venons d'écrire est d'un très mauvais
  style. Le but des fonctions anonymes est d'être
- passé en argument à d'autres fonctions. Corrigez
+ passées en argument à d'autres fonctions. Corrigez
  le code ci-dessus en le réécrivant en utilisant
  la syntaxe de déclaration classique des fonctions
  façon langage C.
@@ -230,14 +230,14 @@ void testStaticAttributeRef() {
  
  Ces fonctions les plus utiles sont compose(),
  curry(), shuffle(), et uncurry(). Ce sont des
- fonction totalement ordinaires, écrites entièrement
+ fonctions totalement ordinaires, écrites entièrement
  en Ceylon !
 
 */
 
 void demoGenericFunctions() {
     
-    //TODO: change this "one-liner" to three lines
+    //TODO : transformez cette fonction d'une ligne en trois lignes
     value fun = uncurry(compose(curry(plus<Float>), 
             (String s) => parseFloat(s) else 0.0));
     

@@ -46,7 +46,7 @@ void hello() {
 
 String greeting(String name = "World") {
     //Les expressions interpolées sont encadrées
-    //de double guillemets obliques à l'intérieur
+    //de doubles guillemets obliques à l'intérieur
     //des chaînes de caractère.
     return "Hello, ``name``!";
 }
@@ -132,7 +132,7 @@ void greet() {
     pour naviguer entre eux.
   
   - echap ou bien le fait de taper un caractère
-    en dehors d'un champs du mode lié, vous fait
+    en dehors d'un champ du mode lié, vous fait
     quitter le mode lié.
   
 */
@@ -213,7 +213,7 @@ void inferredTypes() {
 
 /*
  
- L'échappement des caractères unicodes est réellement
+ L'échappement des caractères unicodes est extrêmement
  utile. Par exemple, pi peut être écrit \{#03C0}. 
  
  Oups, La console d'Eclipse est stupide!
@@ -221,7 +221,7 @@ void inferredTypes() {
  
    Project > Properties > Resource
  
- et réglez l'encodage de votre fichier texte à
+ et réglez l'encodage de votre fichier texte sur
  UTF-8 avant d'exécuter ce programme.
  
 */
