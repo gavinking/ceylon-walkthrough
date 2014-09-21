@@ -1,4 +1,7 @@
-import ceylon.collection { HashSet }
+import ceylon.collection {
+    HashSet,
+    MutableSet
+}
 /*
 
  Un tipo unión representa una elección entre varios tipos.

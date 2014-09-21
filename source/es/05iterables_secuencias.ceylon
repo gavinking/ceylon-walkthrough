@@ -35,8 +35,8 @@ void demoMapFilterFold() {
             .filter((Integer i) => i%3==0)
             .map((Integer i) => i^2)
             //TODO: reemplazar fold() con String.join()
-            .fold("", (String partial, Integer ii) => 
-                    partial + ", " + ii.string));
+            .fold("") 
+                ((partial, ii) => partial + ", " + ii.string));
 }
 
 /*

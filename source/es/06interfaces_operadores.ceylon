@@ -1,4 +1,3 @@
-import ceylon.collection { StringBuilder }
 /*
  
  Una interfaz define un contrato que puede ser

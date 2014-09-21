@@ -1,4 +1,7 @@
-import ceylon.collection { HashMap, HashSet, StringBuilder }
+import ceylon.collection {
+    HashSet,
+    HashMap
+}
 /*
  
  Cuando una función tiene muchos parámetros, es

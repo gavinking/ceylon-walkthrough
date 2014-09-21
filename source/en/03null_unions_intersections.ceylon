@@ -1,4 +1,6 @@
-import ceylon.collection { HashSet }
+import ceylon.collection {
+    HashSet
+}
 /*
 
  A union type represents a choice between 
