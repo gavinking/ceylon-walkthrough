@@ -1,3 +1,7 @@
+import ceylon.collection {
+    HashSet,
+    HashMap
+}
 /*
  
  Cuando una función tiene muchos parámetros, es
@@ -51,9 +55,9 @@ void namedArgListsWithPositionalArgs() {
 
 void namedArgListsWithIterableArgs() {
     value hello = String { 'H', 'e', 'l', 'l', 'o' };
-    value iter = entries { "once", "twice", "thrice" };
-    value set = LazySet { 0, 1, -1 };
-    value map = LazyMap { 1->"once", 2->"twice", 3->"thrice", 0->"never" };
+    value iter = { "once", "twice", "thrice" }.indexed;
+    value set = HashSet { 0, 1, -1 };
+    value map = HashMap { 1->"once", 2->"twice", 3->"thrice", 0->"never" };
     print(hello);
     print(iter);
     print(set);
@@ -71,9 +75,9 @@ void namedArgListsWithIterableArgs() {
 
 void namedArgListsWithComprehensionArgs() {
     value hello = String { for (c in "HELLO") c.lowercased };
-    value iter = entries { "once", "twice", "thrice" };
-    value set = LazySet { *hello };
-    value map = LazyMap { 0->"never", *iter };
+    value iter = { "once", "twice", "thrice" }.indexed;
+    value set = HashSet { *hello };
+    value map = HashMap { 0->"never", *iter };
     print(hello);
     print(iter);
     print(set);
@@ -89,8 +93,8 @@ void namedArgListsWithComprehensionArgs() {
 
 void namedFunctionalArg() {
     value iter = mapPairs {
-        firstArguments = 1..5; 
-        secondArguments = {
+        firstIterable = 1..5; 
+        secondIterable = {
             "once", 
             "twice", 
             "thrice", 
@@ -137,7 +141,7 @@ class Cell({String*} content) {
 }
 
 class Row({Cell*} cell) {
-    shared Cell[] cells = cell.sequence;
+    shared Cell[] cells = cell.sequence();
     shared actual String string {
         value result = StringBuilder();
         result.append("|");

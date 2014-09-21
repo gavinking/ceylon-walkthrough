@@ -31,17 +31,20 @@ Float(Float, Float) plusFun = plus<Float>;
 Integer(Integer*) sumFun = sum;
 
 //classes are functions too!
-Range<Integer>(Integer, Integer) rangeFun 
-        = Range<Integer>;
+Singleton<Integer>(Integer) singletonFun 
+        = Singleton<Integer>;
 
 //even methods are functions
 String({String*}) joinWithCommasFun = ", ".join;
 
-//some crazy examples (don't sweat them)
-{Integer*}({Integer?*}) coalesceFun = coalesce<Integer?>;
-String[]({String*}*) joinFun = concatenate<String>;
+//split() has defaulted parameters, indicated by =
 {String*}(Boolean(Character)=, Boolean=, Boolean=) splitFun 
         = "Hello, world! Goodbye :-(".split;
+
+//a "static" reference to an attribute of a type
+//is another sort of function!
+{Integer*}({Integer?*}) coalesceFun = 
+        Iterable<Integer?>.coalesced;
 
 /*
  
@@ -58,7 +61,7 @@ void demoFunctionRefs() {
     printFun("Hello!");
     print(sumFun(3, 7, 0));
     print(plusFun(3.0, 7.0));
-    print(rangeFun(0, 20));
+    print(singletonFun(0));
 }
 
 /*
@@ -81,9 +84,9 @@ void demoFunctionRefs() {
 //function that accepts a String
 Anything(String) printStringFun = printFun;
 
-//a function that returns a Range is also a
-//function that returns an Iterable
-{Integer+}(Integer, Integer) iterableFun = rangeFun;
+//a function that returns a Singleton is also
+//a function that returns an Iterable
+{Integer+}(Integer) iterableFun = singletonFun;
 
 //a function with a variadic parameter is also
 //a function with two parameters!

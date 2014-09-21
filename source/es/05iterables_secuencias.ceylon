@@ -20,7 +20,7 @@
 
 {String*} noStrings = {};
 {String+} twoStrings = {"hello", "world"};
-{String+} manyStrings = { for (i in 0..100) i.string };
+{String+} manyStrings = { for (n in 0..100) n.string };
 
 /*
 
@@ -35,8 +35,8 @@ void demoMapFilterFold() {
             .filter((Integer i) => i%3==0)
             .map((Integer i) => i^2)
             //TODO: reemplazar fold() con String.join()
-            .fold("", (String partial, Integer ii) => 
-                    partial + ", " + ii.string));
+            .fold("") 
+                ((partial, ii) => partial + ", " + ii.string));
 }
 
 /*
@@ -110,7 +110,7 @@ Boolean allNumbers2 = every { for (s in manyStrings)
 
 [String*] noStringsSeq = [];
 [String+] twoStringsSeq = ["hello", "world"];
-[String+] manyStringsSeq = [ for (i in 0..100) i.string ];
+[String+] manyStringsSeq = [ for (n in 0..100) n.string ];
 
 /*
 
