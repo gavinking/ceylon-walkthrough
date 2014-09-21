@@ -35,6 +35,9 @@ Integer(Integer*) sumFun = sum;
 //les classes sont également des fonctions !
 String({Character*}) strFun = String;
 
+Singleton<Integer>(Integer) singletonFun 
+        = Singleton<Integer>;
+
 //même les méthodes sont des fonctions
 String({String*}) joinWithCommasFun = ", ".join;
 
@@ -62,6 +65,7 @@ void demoFunctionRefs() {
     print(sumFun(3, 7, 0));
     print(plusFun(3.0, 7.0));
     print(strFun({'h','e','l','l','o'}));
+    print(singletonFun(0));
 }
 
 /*
@@ -87,7 +91,8 @@ Anything(String) printStringFun = printFun;
 
 //une fonction qui retourne String est aussi une
 //fonction qui retourne un Iterable<Character>
-{Character*}({Character*}) iterableFun = strFun;
+{Character*}({Character*}) iterableFun1 = strFun;
+{Integer+}(Integer) iterableFun2 = singletonFun;
 
 //une fonction avec un paramètre variadique est
 //également une fonction avec deux paramètres !

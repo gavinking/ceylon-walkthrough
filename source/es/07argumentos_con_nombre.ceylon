@@ -75,9 +75,9 @@ void namedArgListsWithIterableArgs() {
 
 void namedArgListsWithComprehensionArgs() {
     value hello = String { for (c in "HELLO") c.lowercased };
-    value iter = sequence { "once", "twice", "thrice" };
-    value set = HashSet { *hello };
-    value map = HashMap { 0->"never", *iter.indexed };
+    value iter = sequence { "never", "once", "twice", "thrice" };
+    value set = HashSet { *(-1..1) };
+    value map = HashMap { *iter.indexed };
     print(hello);
     print(iter);
     print(set);
