@@ -151,7 +151,7 @@ void testThird() {
  was zu Nothing|Character vereinfacht wird,
  welches wiederum zu Character vereinfacht wird.
  Das alles macht der Compiler - genauer gesagt,
- der "typechecker", welcher alle Typen überprüft -
+ der "Typechecker", welcher alle Typen überprüft -
  automatisch.
  
  Vereinigungs- und Schnitttypen sind besonders
