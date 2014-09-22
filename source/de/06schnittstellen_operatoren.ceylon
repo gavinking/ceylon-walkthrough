@@ -3,7 +3,7 @@
  Eine Schnittstelle (interface) definiert einen
  Vertrag, der von einer Klasse erfüllt werden
  kann. Schnittstellen können Member definieren,
- die formal annotiert sind, oder sogar konkrete
+ die "formal" annotiert sind, oder sogar konkrete
  Member:
  
  - Methoden,

@@ -11,7 +11,7 @@
  - Attribute (Member-Werte), und
  - Member-Klassen.
  
- Jeder Member, der mit shared annotiert ist,
+ Jeder Member, der mit "shared" annotiert ist,
  ist Teil der API der Klasse und von außerhalb
  der Klasse zugänglich.
  
@@ -19,7 +19,7 @@
  die Member string, equals() und hash verfeinern,
  die von der Standard-Superklasse Basic geerbt werden.
  
- Ein Member, der mit actual annotiert ist, verfeinert
+ Ein Member, der mit "actual" annotiert ist, verfeinert
  einen Member der Superklasse.
 
 */
@@ -37,7 +37,7 @@ class Time(shared Integer hour,
         // "is Time" überprüft den Typ des Werts
         // und schränkt ihn ein
         if (is Time that) {
-            // hier hat that den Typ Time
+            // hier hat "that" den Typ Time
             return secondsSinceMidnight == 
                    that.secondsSinceMidnight;
         }
@@ -99,7 +99,7 @@ void testTime() {
 
  Der Zustand mancher Klassen ist veränderlich.
  Wenn ein Attribut veränderlich ist, muss es
- variable annotiert sein.
+ "variable" annotiert sein.
 
 */
 
@@ -224,7 +224,7 @@ object midnight extends SecondTime(0,0,0) {
 
  Eine abstrakte Klasse ist eine Klasse, die
  nicht instanziiert werden kann. Sie kann
- Member deklarieren, die formal annotiert sind
+ Member deklarieren, die "formal" annotiert sind
  und dann von konkreten Unterklassen implementiert
  werden müssen.
  
