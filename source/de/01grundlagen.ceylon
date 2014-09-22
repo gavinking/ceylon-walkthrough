@@ -52,7 +52,7 @@ String greeting(String name = "Welt") {
 /*
 
  Wenn eine Funktion nur einen Ausdruck zurückgibt,
- können wir das mit einem fetten Pfeil abkürzen.
+ können wir das mit einem Zuweisungspfeil abkürzen.
 
 */
 
@@ -210,7 +210,7 @@ void inferredTypes() {
  Unicode-Umschaltcodes sind sehr nützlich.
  Zum Beispiel kannst du Pi als \{#03C0} schreiben.
  
- Dummerweise ist die Eclipse-Konsole blöd und wählt
+ Dummerweise ist die Eclipse-Konsole zu blöd und wählt
  die falsche Kodierung... gehe zu
  
    Project > Properties > Resource
@@ -264,7 +264,7 @@ void printTheUnicodeEscapesForPi() {
 
 */
 
-"Dieses Programm gibt aus:
+"Dieses Programm gibt folgendes aus:
  
  - den _Namen der virtuellen Maschine_,
  - die _Version der virtuellen Maschine_, und
