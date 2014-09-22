@@ -100,7 +100,7 @@ void testConsoleWriter() {
 /*
 
  Die obige anonyme Klasse ist ein Singleton
- (Einweg-Object), weil die Deklaration auf oberster
+ (Einweg-Objekt), weil die Deklaration auf oberster
  Ebene steht und nicht verschachtelt ist. Aber
  nicht jede anonyme Klasse ist ein Singleton.
 
