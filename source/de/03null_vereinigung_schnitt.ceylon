@@ -145,7 +145,7 @@ void testThird() {
 
 /*
 
- Kleine Bemerkung am Rande: Der Typ von 'thrd'
+ Kleine Bemerkung am Rande: Der Typ von "thrd"
  oben ist <Null|Character>&Object, was zu
  Null&Object|Character&Object verteilt wird,
  was zu Nothing|Character vereinfacht wird,
