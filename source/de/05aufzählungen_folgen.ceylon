@@ -35,7 +35,7 @@ void demoMapFilterFold() {
     print((1..100)
             .filter((Integer i) => i%3==0)
             .map((Integer i) => i^2)
-            //TODO: fold() mit String.join() ersetzen
+            // TODO: fold() mit String.join() ersetzen
             .fold("")((partial, ii) 
                     => partial + ", " + ii.string));
 }

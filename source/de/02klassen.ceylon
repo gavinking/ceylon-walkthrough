@@ -180,7 +180,7 @@ class SecondTime(Integer hour,
      
     */
     
-    //TODO: reinkommentieren, Fehler beheben!
+    // TODO: reinkommentieren, Fehler beheben!
     //secondsSinceMidnight => 
     //        super.secondsSinceMidnight+second%60;
     

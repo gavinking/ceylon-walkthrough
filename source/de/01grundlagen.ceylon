@@ -105,7 +105,7 @@ void calculateSums() {
 
 void greet() {
     String greeting = "hei verden";
-    //TODO: verwende die IDE, um den Rest hinzuzufügen!
+    // TODO: verwende die IDE, um den Rest hinzuzufügen!
 }
 
 /*
@@ -307,4 +307,4 @@ void failNoisily() {
 
 */
 
-//TODO: Primzahlen ausgeben!
+// TODO: Primzahlen ausgeben!
