@@ -1,8 +1,8 @@
 /*
 
  Jeder Wert ist eine Instanz einer Klasse. Die
- einfachsten Klassen gruppieren einfach etwas
- zusammengehörigen Zustand in Attributen.
+ einfachsten Klassen gruppieren einfach zusammen-
+ gehörige Zustände in Attributen.
  
  Klassen haben Member:
  
@@ -256,7 +256,7 @@ String formatLinkedList(LinkedList<Object> list) {
     // Wir verwenden ein switch-Statement,
     // um die verschiedenen Fälle des aufgezählten
     // Typs abzuhandeln. Der Compiler stellt sicher,
-    // dass alle Fälle ausgeschöpft werden.
+    // dass alle Fälle behandelt werden.
     switch (list)
     case (empty) {
         return "";
