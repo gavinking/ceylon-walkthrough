@@ -41,13 +41,14 @@ Singleton<Integer>(Integer) singletonFun
 //même les méthodes sont des fonctions
 String({String*}) joinWithCommasFun = ", ".join;
 
-//quelques exemples tordus (ne vous cassez pas trop la tête la dessus)
-{Integer*}({Integer?*}) coalesceFun = Iterable<Integer?>.coalesced;
+//split() a des paramètres par défaut, signalés par =
+{String*}(Boolean(Character)=, Boolean=, Boolean=) splitFun 
+        = "Hello, world! Goodbye :-(".split;
 
-String[]({String*}*) joinFun = concatenate<String>;
-
-{String*}(Boolean(Character)=, Boolean=, Boolean=) 
-splitFun = "Hello, world! Goodbye :-(".split;
+//une référence "statique" d'un attribut d'un type
+//est une autre sorte de fonction !
+{Integer*}({Integer?*}) coalesceFun = 
+        Iterable<Integer?>.coalesced;
 
 /*
  
