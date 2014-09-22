@@ -237,7 +237,8 @@ void helloPi2() => print(greeting("\{GREEK SMALL LETTER PI}"));
 
  Was, wenn wir tatsächlich "\{#03C0}" ausgeben
  wollen? Wir können eine Backslash-Umschaltsequenz
- oder einen wörtlichen String verwenden.
+ oder einen wörtlichen String (eine besondere Art
+ String-Literal) verwenden.
 
 */
 
