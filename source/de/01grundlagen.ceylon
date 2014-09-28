@@ -146,7 +146,7 @@ Integer zero = 0;
 // Eine Variable mit anfänglichem Wert
 variable Integer int = zero;
 
-// Ein Getter, durch einen fetten Pfeil definiert
+// Ein Getter, durch einen Zuweisungspfeil definiert
 Integer intSquared => int^2;
 
 // Ein Getter, durch einen Block definiert
