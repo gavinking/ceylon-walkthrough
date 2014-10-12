@@ -9,7 +9,7 @@
    
 */
 
-void hello() {
+shared void hello() {
     print("Hello, World!");
 }
 
@@ -59,9 +59,9 @@ String greeting(String name = "World") {
  
 */
 
-void helloName() => print(greeting("Ceylon"));
+shared void helloName() => print(greeting("Ceylon"));
 
-void helloWorld() => print(greeting());
+shared void helloWorld() => print(greeting());
 
 /*
  
@@ -78,7 +78,7 @@ Integer sum(Integer* numbers) {
     return sum;
 }
 
-void calculateSums() {
+shared void calculateSums() {
     
     //une somme sans nombres
     print(sum());
@@ -107,7 +107,7 @@ void calculateSums() {
   
 */
 
-void greet() {
+shared void greet() {
     String greeting = "hei verden";
     //TODO : Utilisez l'IDE pour remplir le reste
 }
@@ -162,7 +162,7 @@ Integer intFactorial {
     return fac;
 }
 
-void values() {
+shared void values() {
     int = 3;
     print("i = ``int``");
     print("i^2 = ``intSquared``");
@@ -185,7 +185,7 @@ void values() {
 
 */
 
-void inferredTypes() {
+shared void inferredTypes() {
     value time = system.milliseconds;
     value nl = operatingSystem.newline;
     function sqr(Float float) => float*float;
@@ -226,7 +226,7 @@ void inferredTypes() {
  
 */
 
-void helloPi() => print(greeting("\{#03C0}"));
+shared void helloPi() => print(greeting("\{#03C0}"));
 
 /*
 
@@ -236,7 +236,7 @@ void helloPi() => print(greeting("\{#03C0}"));
 
 */
 
-void helloPi2() => print(greeting("\{GREEK SMALL LETTER PI}"));
+shared void helloPi2() => print(greeting("\{GREEK SMALL LETTER PI}"));
 
 
 /*
@@ -248,7 +248,7 @@ void helloPi2() => print(greeting("\{GREEK SMALL LETTER PI}"));
 
 */
 
-void printTheUnicodeEscapesForPi() {
+shared void printTheUnicodeEscapesForPi() {
     
     //L'échappement \\ est un backslash littéral
     print("\\{#03C0}");
@@ -279,7 +279,7 @@ void printTheUnicodeEscapesForPi() {
  Il utilise les objets [[operatingSystem]] et
  [[language]] définis dans `ceylon.language`, le
  module du langage Ceylon."
-void printInfo() =>
+shared void printInfo() =>
         print("virtual machine: ``operatingSystem.name``
                version: ``operatingSystem.version``
                language: ``language.version`` (``language.versionName``)");
@@ -299,7 +299,7 @@ throws (`class Exception`)
 deprecated ("Boaf, ce programme n'est pas très 
              utile. Essayer plutôt [[hello]].")
 see (`function hello`)
-void failNoisily() {
+shared void failNoisily() {
     throw Exception("aaaaarrrrrggggghhhhhhh");
 }
 

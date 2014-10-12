@@ -42,7 +42,7 @@ class FunctionWriter(void fun(String string))
     write = fun;
 }
 
-void testFunctionWriter() {
+shared void testFunctionWriter() {
     FunctionWriter(process.write).writeLine("Hello!");
     FunctionWriter(process.writeError).writeLine("Ooops!");
 }
@@ -67,7 +67,7 @@ class TextWriter(StringBuilder stringBuilder)
     
 }
 
-void testTextWriter() {
+shared void testTextWriter() {
     
     value textWriter = TextWriter(StringBuilder());
     textWriter.writeLine("Hello :-)");
@@ -90,7 +90,7 @@ object consoleWriter satisfies Writer {
     write = process.write;
 }
 
-void testConsoleWriter() {
+shared void testConsoleWriter() {
     consoleWriter.writeLine("Hello!");
     consoleWriter.writeLine("Bye!");
 }
@@ -128,7 +128,7 @@ object naturals
  
  */
 
-void loop() {
+shared void loop() {
     for (n in naturals) {
         print(n);
     }
@@ -197,7 +197,7 @@ class Complex(shared Float re, shared Float im=0.0)
 
 Complex i = Complex(0.0, 1.0);
 
-void testComplex() {
+shared void testComplex() {
     
     Complex one = Complex(1.0);
     Complex zero = Complex(0.0);

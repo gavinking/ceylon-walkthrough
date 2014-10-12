@@ -30,10 +30,10 @@
  
 */
 
-void demoMapFilterFold() {
+shared void demoMapFilterFold() {
     print((1..100)
-            .filter((Integer i) => i%3==0)
-            .map((Integer i) => i^2)
+            .filter((i) => i%3==0)
+            .map((i) => i^2)
             //TODO: reemplazar fold() con String.join()
             .fold("")((partial, ii) 
                     => partial + ", " + ii.string));
@@ -55,7 +55,7 @@ void demoMapFilterFold() {
 
 */
 
-void demoComprehension() {
+shared void demoComprehension() {
     value squares = { 
         for (i in 1..100) 
             if (i%3==0) 
@@ -129,7 +129,7 @@ Boolean allNumbers2 = every { for (s in manyStrings)
 
 */
 
-void testSequenceIndexing() {
+shared void testSequenceIndexing() {
 
     //El operador de índice con un solo elemento
     //resulta en un tipo posiblemente nulo,
@@ -150,7 +150,7 @@ void testSequenceIndexing() {
  usando el operador nonempty.
 */
 
-void demoNonempty() {
+shared void demoNonempty() {
     if (nonempty args = process.arguments) {
         //Pon el cursor sobre args y first
         //para ver sus tipos!
@@ -167,7 +167,7 @@ void demoNonempty() {
  
 */
 
-void demoForWithIndexes() {
+shared void demoForWithIndexes() {
     for (i->s in twoStringsSeq.indexed) {
         print("``i`` -> ``s``");
     }
@@ -195,7 +195,7 @@ void demoForWithIndexes() {
 
 */
 
-void testTupleIndexing() {
+shared void testTupleIndexing() {
     Null nil1 = tuple[-1];
     Float float = tuple[0];
     Integer int = tuple[1];
@@ -213,7 +213,7 @@ void testTupleIndexing() {
  
  */
 
-void desugaredTuple() {
+shared void desugaredTuple() {
     Tuple<Float|String,Float,Tuple<String,String,Empty>> pair 
             = Tuple(1.0,Tuple("hello",[]));
     Float float = pair.first;
@@ -242,7 +242,7 @@ void desugaredTuple() {
  
 */
 
-void demoSpreadTuple() {
+shared void demoSpreadTuple() {
     value args = [(Character c)=>!c.letter, true];
     for (word in "Hello, World! Goodbye.".split(*args)) {
         print(word);
@@ -282,7 +282,7 @@ void demoSpreadTuple() {
 String welcome(String first, String? middle, String last) => 
         "Welcome, ``first`` ``last``!";
 
-void demoFunctionComposition() {
+shared void demoFunctionComposition() {
     //el operador * "esparce" la tupla
     //resultado de parseName() sobre los
     //parámetros de welcome()

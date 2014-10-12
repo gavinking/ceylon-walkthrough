@@ -9,7 +9,7 @@
    
 */
 
-void hello() {
+shared void hello() {
     print("¡Hola, Mundo!");
 }
 
@@ -55,9 +55,9 @@ String greeting(String name = "Mundo") {
  
 */
 
-void helloName() => print(greeting("Ceylon"));
+shared void helloName() => print(greeting("Ceylon"));
 
-void helloWorld() => print(greeting());
+shared void helloWorld() => print(greeting());
 
 /*
 
@@ -74,7 +74,7 @@ Integer sum(Integer* numbers) {
     return sum;
 }
 
-void calculateSums() {
+shared void calculateSums() {
     
     //Una suma sin números
     print(sum());
@@ -101,7 +101,7 @@ void calculateSums() {
  
 */
 
-void greet() {
+shared void greet() {
 	String greeting = "hei verden";
 	//TODO: ¡usa el IDE para rellenar el resto!
 }
@@ -158,7 +158,7 @@ Integer intFactorial {
     return fac;
 }
 
-void values() {
+shared void values() {
     int = 3;
     print("i = ``int``");
     print("i^2 = ``intSquared``");
@@ -181,7 +181,7 @@ puede ser inferido.
 
 */
 
-void inferredTypes() {
+shared void inferredTypes() {
     value time = system.milliseconds;
     value nl = operatingSystem.newline; 
     function sqr(Float float) => float*float;
@@ -221,7 +221,7 @@ void inferredTypes() {
  
 */
 
-void helloPi() => print(greeting("\{#03C0}"));
+shared void helloPi() => print(greeting("\{#03C0}"));
 
 /*
 
@@ -231,7 +231,7 @@ void helloPi() => print(greeting("\{#03C0}"));
 
 */
 
-void printTheUnicodeEscapeForPi() {
+shared void printTheUnicodeEscapeForPi() {
 
      //La doble diagonal inversa se convierte en su literal    
     print("\\{#03C0}");
@@ -262,7 +262,7 @@ void printTheUnicodeEscapeForPi() {
  Utiliza los objetos [[operatingSystem]] y [[language]]
  definidos en `ceylon.language`, el módulo
  de lenguaje de Ceylon." 
-void printInfo() =>
+shared void printInfo() =>
         print("Máquina virtual: ``operatingSystem.name``
                versión: ``operatingSystem.version``
                lenguaje: ``language.version`` (``language.versionName``)");
@@ -279,7 +279,7 @@ throws (`class Exception`)
 deprecated ("Bien, este programa no es muy útil.
              Prueba [[hello]] mejor.")
 see (`function hello`)
-void failNoisily() {
+shared void failNoisily() {
     throw Exception("¡aaaaarrrrrggggghhhhhhh!");
 }
 

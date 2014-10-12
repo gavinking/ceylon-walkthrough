@@ -8,7 +8,7 @@
    
 */
 
-void hello() {
+shared void hello() {
     print("Hello, World!");
 }
 
@@ -55,9 +55,9 @@ String greeting(String name = "World") {
  
 */
 
-void helloName() => print(greeting("Ceylon"));
+shared void helloName() => print(greeting("Ceylon"));
 
-void helloWorld() => print(greeting());
+shared void helloWorld() => print(greeting());
 
 /*
  
@@ -74,7 +74,7 @@ Integer sum(Integer* numbers) {
     return sum;
 }
 
-void calculateSums() {
+shared void calculateSums() {
     
     //the sum of no numbers
     print(sum());
@@ -102,7 +102,7 @@ void calculateSums() {
   
 */
 
-void greet() {
+shared void greet() {
     String greeting = "hei verden";
     //TODO: use the IDE to fill in the rest!
 }
@@ -156,7 +156,7 @@ Integer intFactorial {
     return fac;
 }
 
-void values() {
+shared void values() {
     int = 3;
     print("i = ``int``");
     print("i^2 = ``intSquared``");
@@ -179,7 +179,7 @@ void values() {
 
 */
 
-void inferredTypes() {
+shared void inferredTypes() {
     value time = system.milliseconds;
     value nl = operatingSystem.newline;
     function sqr(Float float) => float*float;
@@ -219,7 +219,7 @@ void inferredTypes() {
  
 */
 
-void helloPi() => print(greeting("\{#03C0}"));
+shared void helloPi() => print(greeting("\{#03C0}"));
 
 /*
 
@@ -229,7 +229,8 @@ void helloPi() => print(greeting("\{#03C0}"));
 
 */
 
-void helloPi2() => print(greeting("\{GREEK SMALL LETTER PI}"));
+shared void helloPi2() 
+        => print(greeting("\{GREEK SMALL LETTER PI}"));
 
 
 /*
@@ -240,7 +241,7 @@ void helloPi2() => print(greeting("\{GREEK SMALL LETTER PI}"));
 
 */
 
-void printTheUnicodeEscapesForPi() {
+shared void printTheUnicodeEscapesForPi() {
     
     //the escape \\ is a literal backslash
     print("\\{#03C0}");
@@ -270,8 +271,8 @@ void printTheUnicodeEscapesForPi() {
  It uses the [[operatingSystem]] and [[language]] 
  objects defined in `ceylon.language`, the 
  Ceylon language module."
-void printInfo() =>
-        print("virtual machine: ``operatingSystem.name``
+shared void printInfo() =>
+        print("operating system: ``operatingSystem.name``
                version: ``operatingSystem.version``
                language: ``language.version`` (``language.versionName``)");
               //hint: try using the normalized 
@@ -289,7 +290,7 @@ throws (`class Exception`)
 deprecated ("Well, this is not a very useful 
              program. Try [[hello]] instead.")
 see (`function hello`)
-void failNoisily() {
+shared void failNoisily() {
     throw Exception("aaaaarrrrrggggghhhhhhh");
 }
 

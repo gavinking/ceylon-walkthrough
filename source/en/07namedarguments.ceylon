@@ -12,7 +12,7 @@ import ceylon.collection {
  
  */
 
-void namedArgLists() {
+shared void namedArgLists() {
     value entry1 = Entry { key = 1; item = "once"; };
     value entry2 = Entry { item = "twice"; key = 2; };
     value int1 = parseInteger { string = "1000101"; radix = 2; };
@@ -32,7 +32,7 @@ void namedArgLists() {
  
  */
 
-void namedArgListsWithPositionalArgs() {
+shared void namedArgListsWithPositionalArgs() {
     Entry { 1; item = "once"; };
     Entry { 2; "twice"; };
     parseInteger { "1000101"; radix = 2; };
@@ -53,7 +53,7 @@ void namedArgListsWithPositionalArgs() {
  
  */
 
-void namedArgListsWithIterableArgs() {
+shared void namedArgListsWithIterableArgs() {
     value hello = String { 'H', 'e', 'l', 'l', 'o' };
     value iter = sequence { "once", "twice", "thrice" };
     value set = HashSet { 0, 1, -1 };
@@ -73,7 +73,7 @@ void namedArgListsWithIterableArgs() {
  
  */
 
-void namedArgListsWithComprehensionArgs() {
+shared void namedArgListsWithComprehensionArgs() {
     value hello = String { for (c in "HELLO") c.lowercased };
     value iter = sequence { "never", "once", "twice", "thrice" };
     value set = HashSet { *(-1..1) };
@@ -91,7 +91,7 @@ void namedArgListsWithComprehensionArgs() {
  
  */
 
-void namedFunctionalArg() {
+shared void namedFunctionalArg() {
     value iter = mapPairs {
         firstIterable = 1..5; 
         secondIterable = {
@@ -205,6 +205,6 @@ Table table = Table {
     }
 };
 
-void printTable() {
+shared void printTable() {
     print(table);
 }

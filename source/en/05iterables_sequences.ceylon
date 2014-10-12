@@ -29,12 +29,15 @@
  Iterable has the famous methods map(), 
  filter(), and fold().
  
+ Here we're letting Ceylon infer the type of
+ the anonymous function parameters.
+ 
 */
 
-void demoMapFilterFold() {
+shared void demoMapFilterFold() {
     print((1..100)
-            .filter((Integer i) => i%3==0)
-            .map((Integer i) => i^2)
+            .filter((i) => i%3==0)
+            .map((i) => i^2)
             //TODO: replace fold() with String.join()
             .fold("")((partial, ii) 
                     => partial + ", " + ii.string));
@@ -56,7 +59,7 @@ void demoMapFilterFold() {
 
 */
 
-void demoComprehension() {
+shared void demoComprehension() {
     value squares = { 
         for (i in 1..100) 
             if (i%3==0) 
@@ -132,7 +135,7 @@ Boolean allNumbers2 = every {
 
 */
 
-void testSequenceIndexing() {
+shared void testSequenceIndexing() {
     
     //the single-index indexing operator
     //results in a possibly-null type!
@@ -153,7 +156,7 @@ void testSequenceIndexing() {
  nonempty operator.
 */
 
-void demoNonempty() {
+shared void demoNonempty() {
     if (nonempty args = process.arguments) {
         //hover over args and first to see 
         //their types!
@@ -169,7 +172,7 @@ void demoNonempty() {
  
 */
 
-void demoForWithIndexes() {
+shared void demoForWithIndexes() {
     for (i->s in twoStringsSeq.indexed) {
         print("``i`` -> ``s``");
     }
@@ -195,7 +198,7 @@ void demoForWithIndexes() {
 
 */
 
-void demoTupleIndexing() {
+shared void demoTupleIndexing() {
     Null nil1 = tuple[-1];
     Float float = tuple[0];
     Integer int = tuple[1];
@@ -213,7 +216,7 @@ void demoTupleIndexing() {
  
  */
 
-void desugaredTuple() {
+shared void desugaredTuple() {
     Tuple<Float|String,Float,Tuple<String,String,Empty>> pair 
             = Tuple(1.0,Tuple("hello",[]));
     Float float = pair.first;
@@ -241,7 +244,7 @@ void desugaredTuple() {
  
 */
 
-void demoSpreadTuple() {
+shared void demoSpreadTuple() {
     value args = [(Character c) => !c.letter, true];
     for (word in "Hello, World! Goodbye.".split(*args)) {
         print(word);
@@ -281,7 +284,7 @@ void demoSpreadTuple() {
 String welcome(String first, String? middle, String last) => 
         "Welcome, ``first`` ``last``!";
 
-void demoFunctionComposition() {
+shared void demoFunctionComposition() {
     //the * operator "spreads" the tuple result
     //of parseName() over the parameters of
     //welcome()

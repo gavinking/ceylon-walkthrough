@@ -61,7 +61,7 @@ String({String*}) joinWithCommasFun = ", ".join;
  
 */
 
-void demoFunctionRefs() {
+shared void demoFunctionRefs() {
     printFun("Hello!");
     print(sumFun(3, 7, 0));
     print(plusFun(3.0, 7.0));
@@ -110,7 +110,7 @@ Integer(Integer, Integer) sumBothFun = sumFun;
 Float apply(Float op(Float x, Float y), Float z)
         => op(z/2,z/2);
 
-void testApply() {
+shared void testApply() {
     assert (apply(plus<Float>, 1.0)==1.0);
     assert (apply(times<Float>, 3.0)==2.25);
 }
@@ -166,7 +166,7 @@ Anything(String) printTwiceFun
   
 */
 
-void demoAnonFunction() {
+shared void demoAnonFunction() {
     
     {String*} result = mapPairs(
             (String s, Integer i) 
@@ -188,7 +188,7 @@ void demoAnonFunction() {
 String repeat(Integer times)(String s) 
         => (" "+s).repeat(times)[1...];
 
-void demoCurriedFunction() {
+shared void demoCurriedFunction() {
     String(String) thrice = repeat(3);
     print(thrice("hello"));
     print(thrice("bye"));
@@ -205,7 +205,7 @@ void demoCurriedFunction() {
 
 String({String*})(String) staticJoinFun = String.join;
 
-void testStaticMethodRef() {
+shared void testStaticMethodRef() {
     value joinWithCommas = staticJoinFun(", ");
     value string = joinWithCommas({"hello", "world"});
     print(string);
@@ -219,7 +219,7 @@ void testStaticMethodRef() {
   
 */
 
-void testStaticAttributeRef() {
+shared void testStaticAttributeRef() {
     value words = {"hi", "hello", "hola", "jambo"};
     value lengths = words.map(String.size);
     print(lengths);
@@ -241,7 +241,7 @@ void testStaticAttributeRef() {
 
 */
 
-void demoGenericFunctions() {
+shared void demoGenericFunctions() {
     
     //TODO : transformez cette fonction d'une ligne en trois lignes
     value fun = uncurry(compose(curry(plus<Float>), 
@@ -277,7 +277,7 @@ alias StringPredicate => Predicate<String>;
 Boolean both<T>(Predicate<T> p, T x, T y) 
         => p(x) && p(y);
 
-void testPredicates() {
+shared void testPredicates() {
     
     StringPredicate length5 
             = (String s) => s.size==5;

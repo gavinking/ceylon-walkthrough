@@ -18,7 +18,7 @@ void printDouble(String|Integer|Float val) {
     print("double ``val`` is ``double``");
 }
 
-void testDouble() {
+shared void testDouble() {
     printDouble("hello");
     printDouble(111);
     printDouble(0.111);
@@ -44,7 +44,7 @@ void testDouble() {
  
 */
 
-void helloArguments() {
+shared void helloArguments() {
     String? name = process.arguments[0];
     if (is String name) { //TODO: use exists
         print("hello " + name);
@@ -80,7 +80,7 @@ void helloArguments() {
  
 */
 
-void thenAndElse() {
+shared void thenAndElse() {
     Integer n = 5;
     
     print(n>0 then n);
@@ -135,7 +135,7 @@ T? third<T>({T*} iterable) {
     }
 }
 
-void testThird() {
+shared void testThird() {
     assert (exists thrd = third("hello"), 
             thrd =='l');
 }
@@ -154,7 +154,7 @@ void testThird() {
  
 */
 
-void demoTypeInference() {
+shared void demoTypeInference() {
     //hover over joined to see its type!
     value joined = concatenate("hello", 1..69);
     Object[] objects = joined;
@@ -179,7 +179,7 @@ void demoTypeInference() {
 
 */
 
-void demoSets() {
+shared void demoSets() {
     Set<Character> chars = HashSet { elements="hello"; };
     Set<Integer> ints = HashSet { elements=0..10; };
     //hover over intsAndChars to see its type!
@@ -215,7 +215,7 @@ void demoSets() {
  
 */
 
-void thereIsNoNothing() {
+shared void thereIsNoNothing() {
     Nothing n = nothing;
     print(n);
 }
@@ -246,7 +246,7 @@ void thereIsNoNothing() {
 
 */
 
-void demoCoalesce() {
+shared void demoCoalesce() {
     
     //{String?*} is the type of an iterable of
     //strings and nulls
@@ -275,7 +275,7 @@ void demoCoalesce() {
  
 */
 
-void demoMax() {
+shared void demoMax() {
     
     Null maxOfZero = max({});
     

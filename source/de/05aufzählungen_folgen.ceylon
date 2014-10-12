@@ -31,10 +31,10 @@
 
 */
 
-void demoMapFilterFold() {
+shared void demoMapFilterFold() {
     print((1..100)
-            .filter((Integer i) => i%3==0)
-            .map((Integer i) => i^2)
+            .filter((i) => i%3==0)
+            .map((i) => i^2)
             // TODO: fold() mit String.join() ersetzen
             .fold("")((partial, ii) 
                     => partial + ", " + ii.string));
@@ -57,7 +57,7 @@ void demoMapFilterFold() {
 
 */
 
-void demoComprehension() {
+shared void demoComprehension() {
     value squares = { 
         for (i in 1..100) 
             if (i%3==0) 
@@ -134,7 +134,7 @@ Boolean allNumbers2 = every {
 
 */
 
-void testSequenceIndexing() {
+shared void testSequenceIndexing() {
     
     // Zugriff über einen einzelnen Index
     // liefert einen möglicherweise fehlenden Wert!
@@ -158,7 +158,7 @@ void testSequenceIndexing() {
 
 */
 
-void demoNonempty() {
+shared void demoNonempty() {
     if (nonempty args = process.arguments) {    
         // Halte den Mauszeiger über args
         // und first, um ihren Typ zu sehen!
@@ -175,7 +175,7 @@ void demoNonempty() {
 
 */
 
-void demoForWithIndexes() {
+shared void demoForWithIndexes() {
     for (i->s in twoStringsSeq.indexed) {
         print("``i`` -> ``s``");
     }
@@ -203,7 +203,7 @@ void demoForWithIndexes() {
 
 */
 
-void demoTupleIndexing() {
+shared void demoTupleIndexing() {
     Null nil1 = tuple[-1];
     Float float = tuple[0];
     Integer int = tuple[1];
@@ -221,7 +221,7 @@ void demoTupleIndexing() {
 
 */
 
-void desugaredTuple() {
+shared void desugaredTuple() {
     Tuple<Float|String,Float,Tuple<String,String,Empty>> pair 
             = Tuple(1.0,Tuple("Hallo",[]));
     Float float = pair.first;
@@ -250,7 +250,7 @@ void desugaredTuple() {
 
 */
 
-void demoSpreadTuple() {
+shared void demoSpreadTuple() {
     value args = [(Character c) => !c.letter, true];
     for (word in "Hallo, Welt! Tschüss.".split(*args)) {
         print(word);
@@ -291,7 +291,7 @@ void demoSpreadTuple() {
 String welcome(String first, String? middle, String last) => 
         "Willkommen, ``first`` ``last``!";
 
-void demoFunctionComposition() {
+shared void demoFunctionComposition() {
     // Der * Operator verteilt das Tupel aus
     // parseName() über die Parameter von welcome()
     print(welcome(*parseName("Max Mustermann")));

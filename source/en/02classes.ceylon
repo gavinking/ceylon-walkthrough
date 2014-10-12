@@ -52,7 +52,7 @@ class Time(shared Integer hour,
     
 }
 
-void tryOutTime() {
+shared void tryOutTime() {
     Time time1 = Time(13,30);
     print(time1);
     Time time2 = Time(37,30);
@@ -73,7 +73,7 @@ void tryOutTime() {
 */
 
 //TODO: get the assertions passing
-void testTime() {
+shared void testTime() {
     Time time1 = Time(13,30);
     assert (time1.string=="13:30");
     Time time2 = Time(37,30);
@@ -107,7 +107,7 @@ class Counter(count=0) {
     string => count.string;
 }
 
-void testCounter() {
+shared void testCounter() {
     value counter = Counter();
     assert (counter.count==0);
     counter.inc();
@@ -137,7 +137,7 @@ void testCounter() {
 */
 
 //TODO: uncomment this test and get it to pass
-//void testReset() {
+//shared void testReset() {
 //    value counter = Counter();
 //    assert (counter.count==0);
 //    counter.inc();
@@ -191,7 +191,7 @@ class SecondTime(Integer hour,
 */
 
 //TODO: get the assertions passing
-void testSecondTime() {
+shared void testSecondTime() {
     Time time = Time(13,30);
     assert (time.string=="13:30");
     SecondTime stime1 = SecondTime(13,30,00);
@@ -270,7 +270,7 @@ String formatLinkedList(LinkedList<Object> list) {
     }
 }
 
-void testLinkedList() {
+shared void testLinkedList() {
     value list = Cons("Smalltalk", Cons("Java", Cons("Ceylon", empty)));
     assert (list.length==3);
     print(formatLinkedList(list));
