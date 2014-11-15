@@ -5,7 +5,7 @@ import ceylon.collection {
 
  A union type represents a choice between 
  types. A union type is written A|B for any
- types A and B.
+ types A and B. It's pronounced "A or B".
 
 */
 
@@ -35,6 +35,8 @@ shared void testDouble() {
  We can write the type "Null|String" using the 
  special syntactic abbreviation "String?". 
  This is just syntax sugar for the union type!
+ 
+ The type "String?" is pronounced "maybe String".
  
  Run the following program with and without a
  command line argument. (You can set a command
@@ -105,7 +107,8 @@ shared void thenAndElse() {
 
  An intersection represents the combination of
  two types. An intersection type is written 
- A&B for any types A and B.
+ A&B for any types A and B. It's pronounced
+ "A and B".
  
  Intersection types often arise as a result of
  type narrowing.

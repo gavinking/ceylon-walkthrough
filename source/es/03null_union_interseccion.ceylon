@@ -3,8 +3,9 @@ import ceylon.collection {
 }
 /*
 
- Un tipo unión representa una elección entre varios tipos.
- Un tipo unión se escribe A|B para los tipos A y B.
+ Un tipo unión representa una elección entre 
+ varios tipos. Un tipo unión se escribe A|B 
+ para los tipos A y B. Se pronuncia "A o B".
 
 */
 
@@ -36,6 +37,8 @@ shared void testDouble() {
  usando la abreviación sintáctica "String?".
  Esto es simplemente azúcar para la unión
  de un tipo con Null.
+ 
+ El tipo "String?" se pronuncia "string quizá".
 
  Corre el siguiente programa con y sin un
  argumento de línea de comando. Puedes indicar
@@ -106,7 +109,7 @@ shared void thenAndElse() {
 
  Una intersección representa la combinación de
  dos tipos. La intersección de los tipos A y B
- se escribe A&B.
+ se escribe A&B. Se pronuncia "A y B".
 
  Los tipos intersección generalmente surgen como
  resultado de acotación de tipos. 

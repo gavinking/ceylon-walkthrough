@@ -232,13 +232,13 @@ shared void desugaredTuple() {
 
 /*
  
- Podemos utilizar el operador spread para pasar
- una tupla conteniendo argumentos a una función.
- Recuerda que un tipo función consta de un tipo
- de retorno y un tipo de tupla que representa
- los tipos de los parámetros. Asi, la tupla de
- argumentos tiene que ser asignable al tipo de
- tupla de los parámetros.
+ Podemos utilizar el operador desplegar para 
+ pasar una tupla conteniendo argumentos a una 
+ función. Recuerda que un tipo función consta 
+ de un tipo de retorno y un tipo de tupla que 
+ representa los tipos de los parámetros. Asi, 
+ la tupla de argumentos tiene que ser asignable 
+ al tipo de tupla de los parámetros.
  
 */
 
@@ -273,8 +273,8 @@ shared void demoSpreadTuple() {
 
 /*
  
- El operador spread y la función unflatten() nos 
- ayudan a componer este tipo de funciones.
+ El operador desplegar y la función unflatten() 
+ nos ayudan a componer este tipo de funciones.
  
  */
 

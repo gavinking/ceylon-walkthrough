@@ -84,7 +84,7 @@ shared void calculateSums() {
     
     //La suma de los números del 0 al 10
     //inclusive, usando el operador de rango ..
-    //y el operador spread *
+    //y el operador desplegar *
     print(sum(*(0..10)));
    
     //Y para algo más interesante, la suma

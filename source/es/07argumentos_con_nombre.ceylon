@@ -69,7 +69,7 @@ shared void namedArgListsWithIterableArgs() {
  En Ceylon, donde se pueda escribir una lista de
  valores de longitud arbitraria, también se puede
  escribir una comprensión o utilizar el operador
- spread.
+ desplegar.
  
  */
 
