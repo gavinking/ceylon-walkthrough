@@ -90,11 +90,21 @@ Anything(String) printStringFun = printFun;
 //Una función que retorna String también
 //es una función que retorna Iterable.
 {Character*}({Character*}) iterableFun1 = strFun;
+
+//Una función que retorna Singleton también
+//es una función que retorna Iterable.
 {Integer+}(Integer) iterableFun2 = singletonFun;
 
 //¡Una función con un parámetro variádico también
 //es una función que acepta dos parámetros!
 Integer(Integer, Integer) sumBothFun = sumFun;
+
+//Un a función con parámetros por defecto sirve
+//como varias funciones de aridad fija.
+{String*}() splitOnWhitespaceFun = splitFun;
+{String*}(Boolean(Character)) splitOnCharsFun = splitFun;
+{String*}(Boolean(Character), Boolean) splitOnCharsDiscardingFun = splitFun;
+
 
 /*
 
@@ -125,6 +135,24 @@ shared void testApply() {
  parámetro.
  
 */
+
+/*
+ 
+ Cuando una referencia a función que se 
+ refiere a una función genérica ocurre
+ como argumento de una llamada de otra 
+ función, no siempre tenemos que especificar 
+ los argumentos de tipos.
+ 
+ */
+
+//TODO: Esto es una nueva characterística 
+//      de Ceylon 1.1.5, no funciona en
+//      Ceylon 1.1!
+//shared void testApplyWithInference() {
+//    assert (apply(plus, 1.0)==1.0);
+//    assert (apply(times, 3.0)==2.25);
+//}
 
 /*
 
@@ -174,6 +202,19 @@ shared void demoAnonFunction() {
     
     print(" ".join(result));
     
+}
+
+/*
+ 
+ En muchos casos interesantes, podemos
+ omitir los tipos de los parámetros de 
+ una funcion anónima y dejarlos ser 
+ inferidos.
+ 
+ */
+
+shared void demoAnonFunctionParameterInference() {
+    assert(apply((x, y) => x^y, 4.0)==4.0);
 }
 
 /*

@@ -88,13 +88,22 @@ shared void demoFunctionRefs() {
 Anything(String) printStringFun = printFun;
 
 //a function that returns a String is also a
-//function that returns an Iterable<Character>
+//function that returns an Iterable
 {Character*}({Character*}) iterableFun1 = strFun;
+
+//a function that returns a Singleton is also 
+//a function that returns an Iterable
 {Integer+}(Integer) iterableFun2 = singletonFun;
 
 //a function with a variadic parameter is also
 //a function with two parameters!
 Integer(Integer, Integer) sumBothFun = sumFun;
+
+//a function with defaulted parameters works
+//like multiple functions with fixed arity.
+{String*}() splitOnWhitespaceFun = splitFun;
+{String*}(Boolean(Character)) splitOnCharsFun = splitFun;
+{String*}(Boolean(Character), Boolean) splitOnCharsDiscardingFun = splitFun;
 
 /*
 
@@ -124,6 +133,23 @@ shared void testApply() {
  parameter name.
  
 */
+
+/*
+ 
+ When a function reference to a generic
+ function occurs as an argument to a 
+ function call, we often don't need to 
+ explicitly specify the type arguments.
+ 
+ */
+
+//TODO: This is a new feature of Ceylon 
+//      1.1.5, it does not work in the 
+//      current 1.1 release!
+//shared void testApplyWithInference() {
+//    assert (apply(plus, 1.0)==1.0);
+//    assert (apply(times, 3.0)==2.25);
+//}
 
 /*
  
@@ -172,6 +198,18 @@ shared void demoAnonFunction() {
     
     print(" ".join(result));
     
+}
+
+/*
+ 
+ In many interesting cases, we can leave
+ out the parameter types of an anonymous
+ function, and let them be inferred.
+ 
+ */
+
+shared void demoAnonFunctionParameterInference() {
+    assert(apply((x, y) => x^y, 4.0)==4.0);
 }
 
 /*
