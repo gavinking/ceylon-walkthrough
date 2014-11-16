@@ -6,7 +6,7 @@ import ceylon.collection {
  Ein Vereinigungstyp (union type) steht für
  eine Auswahlmöglichkeit zwischen mehreren
  Typen. Die Vereinigung der Typen A und B
- wird als A|B notiert.
+ wird als A|B notiert und "A oder B" ausgesprochen.
 
 */
 
@@ -37,6 +37,9 @@ shared void testDouble() {
  Wir können den Typ "Null|String" abgekürzt als
  "String?" schreiben. Dabei handelt es sich nur
  um syntaktischen Zucker für den Vereinigungstyp.
+ 
+ Der Typ "String?" wird "vielleicht String"
+ ausgesprochen.
  
  Lass das folgende Programm einmal mit und einmal
  ohne Argumente laufen. Du kannst Argumente hinzu-
@@ -107,7 +110,8 @@ shared void thenAndElse() {
 
  Ein Schnitttyp (intersection type) steht für
  eine Kombination zweier Typen. Der Schnitt der
- Typen A und B wird als A&B notiert.
+ Typen A und B wird als A&B notiert und "A und B"
+ ausgesprochen.
  
  Schnitttypen treten häufig bei der Verfeinerung
  von Typen auf.
