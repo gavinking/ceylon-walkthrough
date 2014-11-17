@@ -1,3 +1,5 @@
+
+
 /*
  
  Comme dans tout langage moderne, une fonction
@@ -91,13 +93,23 @@ shared void demoFunctionRefs() {
 Anything(String) printStringFun = printFun;
 
 //une fonction qui retourne String est aussi une
-//fonction qui retourne un Iterable<Character>
+//fonction qui retourne un Iterable
 {Character*}({Character*}) iterableFun1 = strFun;
+
+//une fonction qui retourne un Singleton est aussi
+//une fonction qui retourne un Iterable
 {Integer+}(Integer) iterableFun2 = singletonFun;
 
 //une fonction avec un paramètre variadique est
 //également une fonction avec deux paramètres !
 Integer(Integer, Integer) sumBothFun = sumFun;
+
+//une fonction avec des paramètres par défaut
+//peut être vue comme plusieurs fonctions d'arité
+//fixe
+{String*}() splitOnWhitespaceFun = splitFun;
+{String*}(Boolean(Character)) splitOnCharsFun = splitFun;
+{String*}(Boolean(Character), Boolean) splitOnCharsDiscardingFun = splitFun;
 
 /*
 
@@ -126,7 +138,24 @@ shared void testApply() {
  afin d'utiliser un "style valeur", avec
  un type de fonction avant le nom du paramètre.
  
-*/
+ */
+
+/*
+ Quand une référence de fonction d'une
+ fonction générique est utilisée en 
+ tant qu'argument d'un appel de fonction,
+ nous n'avons souvent pas besoin de préciser
+ les arguments de type.
+ 
+ */
+
+//TODO: C'est une nouvelle fonctionnalité de Ceylon 
+//      1.1.5, et ne fonctionne pas dans la version
+//      1.1 actuelle !
+//shared void testApplyWithInference() {
+//    assert (apply(plus, 1.0)==1.0);
+//    assert (apply(times, 3.0)==2.25);
+//}
 
 /*
  
@@ -176,6 +205,19 @@ shared void demoAnonFunction() {
     
     print(" ".join(result));
     
+}
+
+/*
+ 
+ Très souvent, nous pouvons ne pas
+ préciser le type de paramètre d'une
+ fonction anonyme, et le laisser être
+ inféré. 
+ 
+ */
+
+shared void demoAnonFunctionParameterInference() {
+    assert(apply((x, y) => x^y, 4.0)==4.0);
 }
 
 /*
