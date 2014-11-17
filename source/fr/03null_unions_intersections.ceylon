@@ -5,7 +5,7 @@ import ceylon.collection {
 
  Une union représente un choix possible entre
  plusieurs types. Un type union est écrit A|B
- pour tous types A et B. 
+ pour tous types A et B. Il se lit "A ou B".
 
 */
 
@@ -36,7 +36,8 @@ shared void testDouble() {
  Nous pouvons écrire le type "Null|String" en
  utilisant la syntaxe d'abréviation "String?".
  Il s'agit simplement de sucre syntaxique pour
- les types union.
+ les types union. Le type "String?" se lit
+ "String peut-être".
  
  Lancez le programme suivant d'abord avec, puis
  sans un argument de ligne de commande. Vous
@@ -108,8 +109,9 @@ shared void thenAndElse() {
 /*
 
  Une intersection représente une combinaison
- de deux types. Un intersection est écrite
- A&B pour tous types A et B.
+ de deux types. Une intersection est écrite
+ A&B pour tous types A et B. Elle se lit
+ "A et B".
  
  Une intersection résulte souvent d'une
  restriction de type.
