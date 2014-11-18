@@ -225,7 +225,7 @@ shared void helloPi() => print(greeting("\{#03C0}"));
 
 /*
  
-  O, mucho más verboso, pero tambíen mucho
+  O, mucho más verboso, pero también mucho
   más entendible, podemos usar el nombre del
   carácter Unicode.
  
