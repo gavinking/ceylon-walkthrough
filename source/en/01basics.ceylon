@@ -224,7 +224,7 @@ shared void helloPi() => print(greeting("\{#03C0}"));
 /*
 
   Or, much more verbose, but also much more 
-  understandable, we can use the unicode
+  understandable, we can use the Unicode
   character name.
 
 */
