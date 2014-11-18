@@ -224,6 +224,17 @@ shared void inferredTypes() {
 shared void helloPi() => print(greeting("\{#03C0}"));
 
 /*
+ 
+  O, mucho más verboso, pero tambíen mucho
+  más entendible, podemos usar el nombre del
+  carácter Unicode.
+ 
+ */
+
+shared void helloPi2()
+        => print(greeting("\{GREEK SMALL LETTER PI}"));
+
+/*
 
  Pero, ¿y si queremos imprimir "\{#03C0}"?
  Podemos usar un escape de diagonal inversa,
