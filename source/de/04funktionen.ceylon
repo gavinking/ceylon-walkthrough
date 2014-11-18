@@ -90,11 +90,22 @@ Anything(String) printStringFun = printFun;
 // ist auch eine Funktion, die eine Aufzählung
 // von Zeichen (Characters) zurückgibt
 {Character*}({Character*}) iterableFun1 = strFun;
+
+// Eine Funktion, die ein Singleton (einzelner
+// Wert) zurückgibt, ist auch eine Funktion, die
+// eine Aufzählung zurückgibt
 {Integer+}(Integer) iterableFun2 = singletonFun;
 
 // Eine Funktion mit einem variadischen Parameter
 // ist auch eine Funktion mit zwei Parametern!
 Integer(Integer, Integer) sumBothFun = sumFun;
+
+// Eine Funktion mit Parametern mit Standardwerten
+// funktioniert wie mehrere Funktionen mit fester
+// Stelligkeit (Anzahl an Parametern, Arität)
+{String*}() splitOnWhitespaceFun = splitFun;
+{String*}(Boolean(Character)) splitOnCharsFun = splitFun;
+{String*}(Boolean(Character), Boolean) splitOnCharsDiscardingFun = splitFun;
 
 /*
 
@@ -124,6 +135,23 @@ shared void testApply() {
  Stil", wo der Funktionstyp vor dem Parameternamen steht.
 
 */
+
+/*
+
+ Wenn eine Referenz auf eine generische Funktion
+ als Argument an einen Funktionsaufruf auftritt,
+ müssen wir die Typargumente oft nicht explizit
+ angeben.
+
+*/
+
+// TODO: Das ist eine neue Funktionalität aus
+//       Ceylon 1.1.5, die in der aktuellen
+//       Version 1.1 noch nicht funktioniert!
+//shared void testApplyWithInference() {
+//    assert (apply(plus, 1.0)==1.0);
+//    assert (apply(times, 3.0)==2.25);
+//}
 
 /*
 
@@ -173,6 +201,18 @@ shared void demoAnonFunction() {
     
     print(" ".join(result));
     
+}
+
+/*
+
+ In vielen interessanten Fällen können wir die
+ Parametertypen einer anonymen Funktion auslassen
+ und sie durch den Compiler rückschließen lassen.
+
+*/
+
+shared void demoAnonFunctionParameterInference() {
+    assert (apply((x, y) => x^y, 4.0)==4.0);
 }
 
 /*
