@@ -3,5 +3,7 @@
 
 /.exploded/
 
+/.idea/libraries
+
 *~
 \#*
