@@ -192,10 +192,10 @@ shared void inferredTypes() {
  Position the caret over a value or function
  keyword and select:
  
-   Source > Quick Fix / Assist
+   Source > Quick Fix/Assist
  
- And then select the 'Specify type' quick 
- assist from the popup menu.
+ And then select the 'Declare explicit type' 
+ quick assist from the popup menu.
  
  Or: select the whole function, and select:
  

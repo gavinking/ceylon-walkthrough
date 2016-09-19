@@ -129,7 +129,7 @@ shared void testCounter() {
  the error span. Hover over the error span, 
  or use:
  
-   Edit > Quick Fix / Assist
+   Edit > Quick Fix/Assist
  
  while your caret is inside the error span to 
  let the IDE propose a partial fix.
