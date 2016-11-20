@@ -90,13 +90,15 @@ shared void demoComprehension() {
 
 */
 
-Boolean allNumbers1 = manyStrings.every((String s) 
-        => !Integer.parse(s) is ParseException);
+Boolean allNumbers1
+        = manyStrings.every((s)
+            => !Integer.parse(s) is ParseException);
 
-Boolean allNumbers2 = every { 
-    for (s in manyStrings)
-        !Integer.parse(s) is ParseException
-};
+Boolean allNumbers2
+        = every {
+            for (s in manyStrings)
+            !Integer.parse(s) is ParseException
+        };
 
 /*
 
