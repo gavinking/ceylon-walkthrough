@@ -58,7 +58,7 @@ shared void testFunctionWriter() {
  */
 
 class TextWriter(StringBuilder stringBuilder)
-        satisfies Writer & Category {
+        satisfies Writer & Category<> {
     
     contains(Object element)
             => element in stringBuilder.string;

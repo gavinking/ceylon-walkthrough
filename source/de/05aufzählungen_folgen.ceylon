@@ -91,11 +91,11 @@ shared void demoComprehension() {
 */
 
 Boolean allNumbers1 = manyStrings.every((String s) 
-        => parseInteger(s) exists);
+        => !Integer.parse(s) is ParseException);
 
 Boolean allNumbers2 = every { 
-    for (s in manyStrings) 
-            parseInteger(s) exists 
+    for (s in manyStrings)
+        !Integer.parse(s) is ParseException
 };
 
 /*

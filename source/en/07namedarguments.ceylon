@@ -15,8 +15,8 @@ import ceylon.collection {
 shared void namedArgLists() {
     value entry1 = Entry { key = 1; item = "once"; };
     value entry2 = Entry { item = "twice"; key = 2; };
-    value int1 = parseInteger { string = "1000101"; radix = 2; };
-    value int2 = parseInteger { radix = 16; string = "1000101";  };
+    value int1 = Integer.parse { string = "1000101"; radix = 2; };
+    value int2 = Integer.parse { radix = 16; string = "1000101";  };
     print(entry1);
     print(entry2);
     print(int1);
@@ -35,8 +35,8 @@ shared void namedArgLists() {
 shared void namedArgListsWithPositionalArgs() {
     Entry { 1; item = "once"; };
     Entry { 2; "twice"; };
-    parseInteger { "1000101"; radix = 2; };
-    parseInteger { "1000101"; 16; };
+    Integer.parse { "1000101"; radix = 2; };
+    Integer.parse { "1000101"; 16; };
 }
 
 /*

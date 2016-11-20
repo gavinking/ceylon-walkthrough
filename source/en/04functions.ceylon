@@ -164,7 +164,7 @@ Float(Float, Float) timesFun
 
 //TODO: change to a regular function definition
 Anything(String) printTwiceFun 
-        = void (String s) { 
+        = (String s) {
             print(s); 
             print(s);
         };
@@ -191,7 +191,7 @@ Anything(String) printTwiceFun
 shared void demoAnonFunction() {
     
     {String*} result = mapPairs(
-            (String s, Integer i) 
+            (String s, Integer i)
                 => s.repeat(i), 
             "well hello world goodbye".split(), 
             1..10);
