@@ -7,4 +7,5 @@ autoexportmavendependencies=false
 fullyexportmavendependencies=false
 
 [compiler]
+suppresswarning=filenameNonAscii
 suppresswarning=unusedDeclaration
