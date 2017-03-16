@@ -126,13 +126,20 @@ shared void testCounter() {
  If you're clever, you can get the IDE to 
  write almost all the code for you. First
  uncomment the test code below, and notice
- the error span. Hover over the error span, 
- or use:
- 
-   Edit > Quick Fix/Assist
- 
- while your caret is inside the error span to 
- let the IDE propose a partial fix.
+ the error span. Hover over the error span
+ to see the error message.
+
+ Now, position the caret inside the error
+ span, and let the IDE propose a partial
+ fix by:
+
+ - In IntelliJ:
+
+   clicking the red lightbulb icon
+
+ - In Eclipse:
+
+   selecting Source > Quick Fix/Assist
  
 */
 

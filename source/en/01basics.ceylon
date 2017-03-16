@@ -3,7 +3,15 @@
  A program is just a toplevel function with no 
  parameters. To run the program, select the 
  function name and go to: 
- 
+
+ - In IntelliJ:
+
+   Run > Run
+
+   (or just click the green arrow)
+
+ - In Eclipse:
+
    Run > Run As > Ceylon Java Application
    
 */
@@ -17,14 +25,11 @@ shared void hello() {
   EXERCISE
   
   You probably want to know what print() does!
-  You can either:
-  
-  - hover over the name of the function to see
-    its documentation, or
-  - hold down the ctrl or command key while
-    clicking the name of the function to 
-    navigate to its declaration.
-  
+  You can view its implementation by holding
+  down the ctrl or command key while clicking
+  the name of the function to navigate to its
+  declaration.
+
 */
 
 /*
@@ -190,14 +195,21 @@ shared void inferredTypes() {
  EXERCISE
  
  Position the caret over a value or function
- keyword and select:
- 
-   Source > Quick Fix/Assist
+ keyword and:
+
+ - In IntelliJ:
+
+   click the yellow lightbulb icon that appears
+
+ - In Eclipse:
+
+   select Source > Quick Fix/Assist
  
  And then select the 'Declare explicit type' 
  quick assist from the popup menu.
  
- Or: select the whole function, and select:
+ Or, in Eclipse only, select the whole function,
+ and select:
  
    Source > Reveal Inferred Types
  
@@ -256,9 +268,20 @@ shared void printTheUnicodeEscapesForPi() {
 
  String literals may span multiple lines. We
  especially use multi-line string literals to 
- specify API documentation in markdown format. 
- Hover over the name of this function to see 
- its documentation.
+ specify API documentation in markdown format.
+
+ You can view the formatted documentation of
+ the following function by:
+
+ - In IntelliJ:
+
+   selecting the name of the function and
+   View > Quick Documentation
+
+
+ - In Eclipse:
+
+   hovering over the name of the function
  
 */
 
@@ -281,7 +304,8 @@ shared void printInfo() =>
 /*
 
  Annotations specify metadata about a program
- element. Hover over the name of this function.
+ element. Check out the documentation of this
+ function.
 
 */
 
