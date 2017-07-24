@@ -57,13 +57,13 @@ shared void namedArgListsWithPositionalArgs() {
 
 shared void namedArgListsWithIterableArgs() {
     value hello = String { 'H', 'e', 'l', 'l', 'o' };
-    value iter = sequence { "once", "twice", "thrice" };
-    value set = HashSet { 0, 1, -1 };
-    value map = HashMap { 1->"once", 2->"twice", 3->"thrice", 0->"never" };
+    value immutableSet = set { "once", "twice", "thrice" };
+    value hashSet = HashSet { 0, 1, -1 };
+    value hashMap = HashMap { 1->"once", 2->"twice", 3->"thrice", 0->"never" };
     print(hello);
-    print(iter);
-    print(set);
-    print(map);
+    print(immutableSet);
+    print(hashSet);
+    print(hashMap);
 }
 
 /*
@@ -78,13 +78,13 @@ shared void namedArgListsWithIterableArgs() {
 
 shared void namedArgListsWithComprehensionArgs() {
     value hello = String { for (c in "HELLO") c.lowercased };
-    value iter = sequence { "never", "once", "twice", "thrice" };
-    value set = HashSet { *(-1..1) };
-    value map = HashMap { *iter.indexed };
+    value immutableSet = set { "never", "once", "twice", "thrice" };
+    value hashSet = HashSet { *(-1..1) };
+    value hashMap = HashMap { *immutableSet.indexed };
     print(hello);
-    print(iter);
-    print(set);
-    print(map);
+    print(immutableSet);
+    print(hashSet);
+    print(hashMap);
 }
 
 /*
